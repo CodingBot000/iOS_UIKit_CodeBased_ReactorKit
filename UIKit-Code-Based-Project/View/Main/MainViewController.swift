@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .white
+        view.backgroundColor = .white
         
         view.addSubview(mainScrollView)
         
@@ -82,7 +82,6 @@ class MainViewController: UIViewController {
 //        coloredForDebugging()
     }
     
-
     private func setupSubviews() {
         [bannerSliderView,
          subTitleView1, specialChipsSectionView,
@@ -95,26 +94,9 @@ class MainViewController: UIViewController {
         }
         
      }
-     
-    private func coloredForDebugging() {
-        // for debugging
-        view.backgroundColor = .systemYellow
-        view.safeAreaLayoutGuide.owningView?.backgroundColor = .magenta
-        mainScrollView.backgroundColor = .blue
-        mainContainerView.backgroundColor = .darkGray
-        subTitleViewTodayPublished.backgroundColor = .green
-        todayPublishingView.backgroundColor = .systemPink
-        subTitleViewHotSNS.backgroundColor = .systemTeal
-        todayPublishingView.backgroundColor = .brown
-        
-        mainBottomInfoBar.backgroundColor = .red
-    }
+
     
     private func setupBottomInfoBar() {
-        setupProductInfoViews()
-    }
-    
-    private func setupProductInfoViews() {
         let product = MemoryStores.currentProdcutHistory()
         
         let productInfoView = ProductInfoView(productData: product)
@@ -135,4 +117,18 @@ class MainViewController: UIViewController {
         ])
         
     }
+    
+   private func coloredForDebugging() {
+       // for debugging
+       view.backgroundColor = .systemYellow
+       view.safeAreaLayoutGuide.owningView?.backgroundColor = .magenta
+       mainScrollView.backgroundColor = .blue
+       mainContainerView.backgroundColor = .darkGray
+       subTitleViewTodayPublished.backgroundColor = .green
+       todayPublishingView.backgroundColor = .systemPink
+       subTitleViewHotSNS.backgroundColor = .systemTeal
+       todayPublishingView.backgroundColor = .brown
+       
+       mainBottomInfoBar.backgroundColor = .red
+   }
 }

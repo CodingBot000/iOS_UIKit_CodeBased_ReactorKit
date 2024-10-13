@@ -15,12 +15,7 @@ class ProductInfoView: UIView {
         case empty
         case notEmpty
     }
-    
-    let productImageSize = 50.0
-    let playButtonSize = 45.0
-    let prevForwardButtonSize = 30.0
-    let containerPadding = 10.0
-    let containerHeight = 70.0
+
     
     var disposeBag = DisposeBag()
     
@@ -156,26 +151,26 @@ class ProductInfoView: UIView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
 
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: containerPadding),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: containerPadding * -1),
-            containerView.topAnchor.constraint(equalTo: topAnchor, constant: containerPadding),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: containerPadding * -1),
-            containerView.heightAnchor.constraint(equalToConstant: containerHeight),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Dimens.containerPadding),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Dimens.containerPadding * -1),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: Dimens.containerPadding),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Dimens.containerPadding * -1),
+            containerView.heightAnchor.constraint(equalToConstant: Dimens.containerHeight),
             
             masterStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             masterStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
             masterStackView.topAnchor.constraint(equalTo: containerView.topAnchor),
             masterStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
 
-            productImageView.widthAnchor.constraint(equalToConstant: productImageSize),
-            productImageView.heightAnchor.constraint(equalToConstant: productImageSize),
+            productImageView.widthAnchor.constraint(equalToConstant: Dimens.productImageSize),
+            productImageView.heightAnchor.constraint(equalToConstant: Dimens.productImageSize),
             
-            playButton.widthAnchor.constraint(equalToConstant: playButtonSize),
-            playButton.heightAnchor.constraint(equalToConstant: playButtonSize),
-            prevButton.widthAnchor.constraint(equalToConstant: prevForwardButtonSize),
-            prevButton.heightAnchor.constraint(equalToConstant: prevForwardButtonSize),
-            nextButton.widthAnchor.constraint(equalToConstant: prevForwardButtonSize),
-            nextButton.heightAnchor.constraint(equalToConstant: prevForwardButtonSize)
+            playButton.widthAnchor.constraint(equalToConstant: Dimens.playButtonSize),
+            playButton.heightAnchor.constraint(equalToConstant: Dimens.playButtonSize),
+            prevButton.widthAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
+            prevButton.heightAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
+            nextButton.widthAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
+            nextButton.heightAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize)
         ])
 
     }

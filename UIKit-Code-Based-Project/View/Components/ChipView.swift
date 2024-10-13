@@ -39,9 +39,6 @@ class ChipView: UIView {
 
 
     private func setupView() {
-        let vertical = 2.0
-        let horizontal = 8.0
-
 
         if #available(iOS 15.0, *) {
             var config = UIButton.Configuration.filled()
@@ -49,7 +46,7 @@ class ChipView: UIView {
             config.baseBackgroundColor = backgroundColorCustom
             config.baseForegroundColor = .black
             config.cornerStyle = .medium
-            config.contentInsets = NSDirectionalEdgeInsets(top: vertical, leading: horizontal, bottom: vertical, trailing: horizontal)
+            config.contentInsets = NSDirectionalEdgeInsets(top: Dimens.chipViewVerticalInsets, leading: Dimens.chipViewhorizontalInsets, bottom: Dimens.chipViewVerticalInsets, trailing: Dimens.chipViewhorizontalInsets)
             button.configuration = config
             button.titleLabel?.numberOfLines = 1
             button.titleLabel?.lineBreakMode = .byClipping
@@ -62,7 +59,7 @@ class ChipView: UIView {
             button.setTitleColor(.black, for: .normal)
             button.layer.cornerRadius = 8
             button.clipsToBounds = true
-            button.contentEdgeInsets = UIEdgeInsets(top: vertical, left: horizontal, bottom: vertical, right: horizontal)
+            button.contentEdgeInsets = UIEdgeInsets(top: Dimens.chipViewVerticalInsets, left: Dimens.chipViewhorizontalInsets, bottom: Dimens.chipViewVerticalInsets, right: Dimens.chipViewhorizontalInsets)
 
             button.titleLabel?.numberOfLines = 1
             button.titleLabel?.lineBreakMode = .byClipping
@@ -82,13 +79,11 @@ class ChipView: UIView {
 extension ChipView {
 
     private func setupConstraints() {
-        let constants = 4.0
-
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: self.topAnchor, constant: constants),
-            button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: constants),
-            button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -constants),
-            button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -constants)
+            button.topAnchor.constraint(equalTo: self.topAnchor, constant: Dimens.chipViewMargin),
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Dimens.chipViewMargin),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Dimens.chipViewMargin * -1),
+            button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Dimens.chipViewMargin * -1)
         ])
 
         button.setContentHuggingPriority(.required, for: .horizontal)

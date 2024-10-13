@@ -10,11 +10,8 @@ import UIKit
 
 extension MainViewController {
     func extensionFunctions() {
-
         setupConstraints()
-
         setupBindings()
-        
     }
 
     
@@ -98,9 +95,6 @@ extension MainViewController {
   }
 }
 
-private let gridSectionHeight = 180.0
-private let bottomInfoBarHeight = 60.0
-private let bannerSliderHeight = 300.0
 
 extension MainViewController {
 
@@ -140,7 +134,7 @@ extension MainViewController {
        ])
        
        NSLayoutConstraint.activate([
-           mainBottomInfoBar.heightAnchor.constraint(equalToConstant: bottomInfoBarHeight),
+        mainBottomInfoBar.heightAnchor.constraint(equalToConstant: Dimens.bottomInfoBarHeight),
            mainBottomInfoBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
            mainBottomInfoBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
            mainBottomInfoBar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -148,7 +142,7 @@ extension MainViewController {
        ])
        
        NSLayoutConstraint.activate([
-           bannerSliderView.heightAnchor.constraint(equalToConstant: bannerSliderHeight)
+        bannerSliderView.heightAnchor.constraint(equalToConstant: Dimens.bannerSliderHeight)
        ])
        
        NSLayoutConstraint.activate([
@@ -156,10 +150,10 @@ extension MainViewController {
        ])
        
         NSLayoutConstraint.activate([
-            todayPublishingView.heightAnchor.constraint(equalToConstant: gridSectionHeight),
-            hotSNSSection.heightAnchor.constraint(equalToConstant: gridSectionHeight),
-            genreSection.heightAnchor.constraint(equalToConstant: gridSectionHeight),
-            recommendSection.heightAnchor.constraint(equalToConstant: gridSectionHeight)
+            todayPublishingView.heightAnchor.constraint(equalToConstant: Dimens.gridSectionHeight),
+            hotSNSSection.heightAnchor.constraint(equalToConstant: Dimens.gridSectionHeight),
+            genreSection.heightAnchor.constraint(equalToConstant: Dimens.gridSectionHeight),
+            recommendSection.heightAnchor.constraint(equalToConstant: Dimens.gridSectionHeight)
         ])
 
    }

@@ -192,7 +192,7 @@ class DetailViewController: UIViewController {
         descLabel.backgroundColor = .green
     }
     private func setupConstraints() {
-        let padding = 24.0
+   
         NSLayoutConstraint.activate([
             customNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             customNavBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -204,16 +204,16 @@ class DetailViewController: UIViewController {
 
             backButton.leadingAnchor.constraint(equalTo: customNavBar.leadingAnchor, constant: 16),
             backButton.centerYAnchor.constraint(equalTo: customNavBar.centerYAnchor),
-            backButton.widthAnchor.constraint(equalToConstant: padding),
-            backButton.heightAnchor.constraint(equalToConstant: padding)
+            backButton.widthAnchor.constraint(equalToConstant: Dimens.detailViewPadding),
+            backButton.heightAnchor.constraint(equalToConstant: Dimens.detailViewPadding)
         ])
         
         NSLayoutConstraint.activate([
          
             likeButton.trailingAnchor.constraint(equalTo: customNavBar.trailingAnchor, constant: -16),
             likeButton.centerYAnchor.constraint(equalTo: customNavBar.centerYAnchor),
-            likeButton.widthAnchor.constraint(equalToConstant: padding),
-            likeButton.heightAnchor.constraint(equalToConstant: padding)
+            likeButton.widthAnchor.constraint(equalToConstant: Dimens.detailViewPadding),
+            likeButton.heightAnchor.constraint(equalToConstant: Dimens.detailViewPadding)
         ])
         
         NSLayoutConstraint.activate([

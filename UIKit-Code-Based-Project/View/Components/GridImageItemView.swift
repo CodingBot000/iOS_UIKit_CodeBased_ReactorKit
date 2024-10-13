@@ -12,8 +12,6 @@ import RxCocoa
 
 class GridImageItemView: UIView {
 
-    // MARK: - Properties
-    
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -83,13 +81,26 @@ class GridImageItemView: UIView {
     private func setupConstraints() {
         let imageAspectRatio = gridType.aspectRatio
         
+        if (gridType == GridType.wideWidth) {
+            NSLayoutConstraint.activate([
+                imageView.topAnchor.constraint(equalTo: self.topAnchor),
+                imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                imageView.widthAnchor.constraint(equalToConstant: Dimens.gridImageWideWidth),
+                imageView.heightAnchor.constraint(equalToConstant: Dimens.gridImageRectangleSize)
+
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                imageView.topAnchor.constraint(equalTo: self.topAnchor),
+                imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+
+                imageView.widthAnchor.constraint(equalToConstant: Dimens.gridImageRectangleSize),
+                imageView.heightAnchor.constraint(equalToConstant: Dimens.gridImageRectangleSize)
+            ])
+        }
         NSLayoutConstraint.activate([
-
-            imageView.topAnchor.constraint(equalTo: self.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor),
-
 
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 4),

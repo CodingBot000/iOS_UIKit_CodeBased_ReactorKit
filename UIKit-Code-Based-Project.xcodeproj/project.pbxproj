@@ -49,6 +49,7 @@
 		57A4A2A42CB96B2A007B93B8 /* MemoryStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2A32CB96B06007B93B8 /* MemoryStores.swift */; };
 		57A4A2A82CBA3608007B93B8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2A72CBA35FC007B93B8 /* WebViewController.swift */; };
 		57A4A2B72CBA7023007B93B8 /* ChipsSelectionReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2B62CBA7012007B93B8 /* ChipsSelectionReactor.swift */; };
+		57A51C262CBBFC1100416E38 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A51C252CBBFC0C00416E38 /* Dimens.swift */; };
 		AC9B622823D8550B46A8E3DD /* Pods_UIKit_Code_Based_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C71C01AB80E6CF6F63EA55 /* Pods_UIKit_Code_Based_Project.framework */; };
 		E5C09CAB28F2940700B11418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAA28F2940700B11418 /* AppDelegate.swift */; };
 		E5C09CAD28F2940700B11418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAC28F2940700B11418 /* SceneDelegate.swift */; };
@@ -100,6 +101,7 @@
 		57A4A2A32CB96B06007B93B8 /* MemoryStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStores.swift; sourceTree = "<group>"; };
 		57A4A2A72CBA35FC007B93B8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		57A4A2B62CBA7012007B93B8 /* ChipsSelectionReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsSelectionReactor.swift; sourceTree = "<group>"; };
+		57A51C252CBBFC0C00416E38 /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		E3C71C01AB80E6CF6F63EA55 /* Pods_UIKit_Code_Based_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKit_Code_Based_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C09CA728F2940700B11418 /* UIKit-Code-Based-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-Code-Based-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C09CAA28F2940700B11418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				57A4A1E92CB30AC1007B93B8 /* LoadJson.swift */,
 				57A4A29B2CB837A8007B93B8 /* GridType.swift */,
+				57A51C252CBBFC0C00416E38 /* Dimens.swift */,
 				57A4A29D2CB839BE007B93B8 /* RepositoryDataType.swift */,
 				57A4A1EA2CB30AC1007B93B8 /* Extensions.swift */,
 				57A4A28D2CB7C5D9007B93B8 /* DataStructureUtil.swift */,
@@ -447,6 +450,7 @@
 				57A4A2892CB7BA39007B93B8 /* DetailViewController.swift in Sources */,
 				57A4A2102CB30ADE007B93B8 /* CoreDataManager.swift in Sources */,
 				57A4A2582CB54972007B93B8 /* HotNewsRepository.swift in Sources */,
+				57A51C262CBBFC1100416E38 /* Dimens.swift in Sources */,
 				57A4A2462CB5198F007B93B8 /* PointListRepository.swift in Sources */,
 				57A4A2112CB30ADE007B93B8 /* BannerData.swift in Sources */,
 				57A4A2232CB31229007B93B8 /* ProductDataModel.xcdatamodeld in Sources */,
