@@ -122,7 +122,7 @@ class HorizontalGridScrollView: UIView, View {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
         for product in products {
-            let itemView = GridImageItemView(productData: product, gridType: gridType)
+            let itemView = GridImageItemViewCell(productData: product, gridType: gridType)
             itemView.translatesAutoresizingMaskIntoConstraints = false
             stackView.addArrangedSubview(itemView)
 

@@ -1,5 +1,5 @@
 //
-//  GridImageItemView.swift
+//  GridImageItemViewCell.swift
 //  UIKit-Code-Based-Project
 //
 //  Created by switchMac on 10/8/24.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GridImageItemView: UIView {
+class GridImageItemViewCell: UIView {
     var disposeBag = DisposeBag()
     
     private let imageView: UIImageView = {
