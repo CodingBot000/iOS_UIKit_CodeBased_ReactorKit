@@ -1,0 +1,284 @@
+[
+    {
+        "id": "0",
+        "name": "GV70",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "GV80's high-performance engine, this offers fuel efficiency and improved combustion stability with a central-mounted injector that increases combustion speed.\n his engine combines performance and economy, with a dual injection system that optimally injects fuel according to driving conditions.",
+        "isHybrid": false,
+        "infoUrl": "https://www.genesis.com/worldwide/en/models/luxury-suv-genesis/gv80/highlights.html",
+        "imageName": "gv70"
+    },
+
+    {
+        "id": "1",
+        "name": "Tesla Model S",
+        "subName": "Tesla",
+        "manufacturer": "USA",
+        "description": "The Tesla Model S is a battery-electric, four-door full-size car that has been produced by the American automaker Tesla since 2012. As Tesla's longest-produced model and second vehicle, the Model S is frequently regarded as one of the most significant and influential electric cars in the industry.\n\nTesla started developing the Model S in c.",
+        "isHybrid": false,
+        "infoUrl": "https://www.tesla.com/models",
+        "imageName": "tesla_model_s"
+    },
+    
+    
+    
+    
+    {
+        "id": "2",
+        "name": "Toyota Prius",
+        "subName": "Toyota",
+        "manufacturer": "Jspan",
+        "description": "5-door liftback full hybrid electric automobile developed by Toyota.",
+        "isHybrid": true,
+        "infoUrl": "https://www.toyota.com/prius/",
+        "imageName": "toyota_prius"
+    },
+    {
+        "id": "3",
+        "name": "new Sonata",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "Hyundai’s new design concept starts with the 2022 Sonata with great active safety systems and cutting-edge technology.\nThe 2022 Sonata showcases a sporty four-door-coupe look using proportion, styling, and technology. \nWith an entirely new design, the look at first doesn’t appear to be Hyundai’s traditional style, which forces people to take a second look. The 2022 Sonata embodies the evolution of new Hyundai’s, the first model on a new and innovative vehicle platform that delivers increased strength and reduced weight to enable improvements in design, safety, efficiency, and driving performance.",
+        "isHybrid": false,
+        "infoUrl": "https://www.hyundai.com/worldwide/en/cars/azera-2023/highlights",
+        "imageName": "sonata"
+    },
+    {
+        "id": "4",
+        "name": "Chevrolet Volt",
+        "subName": "Chevrolet",
+        "manufacturer": "USA",
+        "description": "5-door hatchback plug-in hybrid car manufactured by General Motors.",
+        "isHybrid": true,
+        "infoUrl": "https://www.caranddriver.com/chevrolet/volt",
+        "imageName": "chevrolet_volt"
+    },
+    
+    {
+        "id": "5",
+        "name": "G90 BLACK",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "The essence of Genesis is from a design language inspired by the fact that anything can emerge from the void of pure black. As such, it signifies beginnings. Pure black has the potentiality to be anything. So, too, the essence of Genesis, the beginning. Meet the black that Genesis has created, within and without encapsulating the essential meaning of Genesis in every detail.\n Deep Black Materials have been implemented in various elements that were meticulously designed to align with a luxury lifestyle, resulting in a serene yet sophisticated interior design. Genesis is applying an eco-friendly approach based on its design philosophy, which succinctly showcases a commitment to sustainable luxury.\n Details of Genesis G90 Black are remarkably black. Exclusive to the Genesis G90 Black, dial up the black to a blacker black. Meet true black, down to the last detail.",
+        "isHybrid": false,
+        "infoUrl": "https://www.genesis.com/worldwide/en/models/luxury-sedan-genesis/g90-black/highlights.html",
+        "imageName": "g90_black"
+    },
+    {
+        "id": "6",
+        "name": "Electrified GV70",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "Safety\n\n SAFETY NEVER TAKES THE BACKSEAT\n Designed to exceed safety standards with an advanced system focused on heightening your instincts. Advanced technology14,15 continuously analyzes the driving environment and detects risks to prevent the risk of accidents before they have any chance of happening.\n\nTechnology\n\nMAKING SMART MOVES\n Feel the convenience of cutting-edge innovations that take the pleasure of driving into a new era. The Electrified GV70's advanced features put the pioneering electric SUV in a lane all of its own.",
+        "isHybrid": true,
+        "infoUrl": "https://www.genesis.com/worldwide/en/models/luxury-suv-genesis/electrified-gv70/highlights.html",
+        "imageName": "electrified_gv70"
+    },
+    {
+        "id": "7",
+        "name": "tucson",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "The Tucson receives a styling refresh for 2025, its fourth year on the market, that includes updates to its grille, bumpers, and wheels. \nInside, the Tucson's old optional infotainment setup has been swapped for a new one that includes two displays—one for infotainment, the other for gauges—sharing a singular rectangular housing on the dashboard; entry-level models get a single 12.3-inch touchscreen and analog gauges. \nThe steering wheel design has been tweaked and the climate control panel has been updated too.",
+        "isHybrid": true,
+        "infoUrl": "https://www.hyundai.com/worldwide/en/suv/tucson-2023/highlights",
+        "imageName": "tucson"
+    },
+    {
+        "id": "8",
+        "name": "EV9",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "CAPABILITY & PERFORMANCE\n\nOverhauling expectations.\nSmooth Electric Driving\n\nThe EV9’s purpose-built EV platform utilizes ultra-high-strength steel to provide a robust yet lightweight structure. It comes equipped with an available 99.8 kWh battery, dual motor e-AWD, and a generous 122-in. wheelbase—comparable to that of luxury vehicles.\n\nUndeniable Thrill\nFew 3-row SUVs in the segment offer the power and exhilarating performance of the EV9 with up to 379 hp, 516 lb.-ft. of torque and confidence-inspiring acceleration, taking you to highway speeds in a matter of seconds for merging or passing.\n\nNo Gear Left Behind\nBoasting an available towing capacity of 5,000 lbs., the EV9 empowers you to haul your gear. What’s more, its self-leveling rear suspension and a dedicated trailering mode can make it an apt adventure companion, ready to tackle the road ahead.\n\nTake it Up a Notch\nBoldly explore beyond the confines of ordinary routes with an available 7.8 inches of ground clearance. Whether you're faced with rugged terrain or unexpected inclement weather, the EV9 can help you navigate the road with confidence.\n\nPower Up the Adventure\nUnwind when you arrive with the Onboard Power Generator that delivers up to 1,920 watts of electrical power to power select appliances, laptops, and more. It also provides a large-scale portable power bank so you can charge up electric bikes on the go or power up your very own outdoor movie night.\n\nVehicle-to-Home\nIn the future, the EV9 could support vehicle-to-home (V2H) backup power capabilities. The vision for EV9’s V2H capability is to deliver power back to the home with the vehicle’s battery. For properly equipped homes, the EV9 can reverse its energy flow from the vehicle to your home, powering a variety of devices and appliances.\n\nBoost Performance Enhancement\nLevel up your driving experience with Boost, available on Wind and Land trims. Designed to increase your motor's torque from 443 to 516 lb.-ft, Boost delivers stronger acceleration and enhanced performance you can feel.",
+        "isHybrid": true,
+        "infoUrl": "https://www.kia.com/us/en/ev9",
+        "imageName": "ev9_kia"
+    },
+    {
+        "id": "9",
+        "name": "Telluride",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "INTERIOR\n\nEscape the ordinary.\n12.3-in. Dual Panoramic Displays\nThe available 12.3-in. Dual Panoramic Displays w/ navigation offer a combined 24 inches of display for entertainment, convenience, and more.\n\nPremium Seating Trim\nWith available SynTex Suede, premium stitching, and Nappa leather seat trim in five color options, the Telluride’s interior is both captivating and comfortable.\n\nA First-Class 2nd Row\nAvailable heated and ventilated 2nd-row captain’s chairs with class-leading 2nd-row legroom offer a comfortable ride for drivers and passengers alike.\nDual Sunroofs\nEnjoy a panoramic view of the open skyline with available dual sunroofs that create an airy driving sensation.\nA Quiet Zone Interior\nThe Telluride’s quiet zone interior mutes rear speakers and limits the volume in the front row speakers when activated, for a more peaceful driving experience.",
+        "isHybrid": true,
+        "infoUrl": "https://www.kia.com/us/en/telluride#trims",
+        "imageName": "telluride_kia_"
+    },
+    
+    {
+        "id": "10",
+        "name": "Tesla Model 4",
+        "subName": "Tesla",
+        "manufacturer": "USA",
+        "description": "The Tesla Model 4 is a battery electric mid-size sedan with a fastback body style built by Tesla, Inc., introduced in 2017. \nThe vehicle is marketed as being more affordable to more people than previous models made by Tesla. \nThe Model 3 was the world's top-selling plug-in electric car for three years, from 2018 to 2020, before the Tesla Model Y, a crossover SUV based on the Model 3 chassis, took the top spot. \nIn June 2021, the Model 3 became the first electric car to pass global sales of 1 million. \nA facelifted Model 3 with revamped interior and exterior styling was introduced in late 2023 for countries supplied by Gigafactory Shanghai and in early 2024 in North America and other countries supplied by the Tesla Fremont Factory.",
+        "isHybrid": false,
+        "infoUrl": "https://www.tesla.com/model3",
+        "imageName": "tesla_model_3"
+    },
+    {
+        "id": "11",
+        "name": "Soul",
+        "subName": "Kia",
+        "manufacturer": "Korea",
+        "description": "SOULMATE™ SPECIAL EDITION\n Ignite your spirit.\nThe Soul EX Soulmate™ Special Edition is a bold embodiment of fun and functionality. With three exterior color options and sleek limited edition styling, this unique Soul is made to captivate a crowd.\n\n Unique 18-inch Alloy Wheels\n Sleek and stylish two-tone black roof\n\n Limited edition interior badge\n Harman Kardon® Premium Audio System\n Sound-connected LED speaker lights\n Exclusive Umber SynTex and Cloth Seating Trim",
+        "isHybrid": false,
+        "infoUrl": "https://www.kia.com/us/en/soul#trims",
+        "imageName": "soul_kia"
+    },
+    {
+        "id": "12",
+        "name": "Toyota Prius",
+        "subName": "Toyota",
+        "manufacturer": "Japan",
+        "description": "5-door liftback full hybrid electric automobile developed by Toyota.",
+        "isHybrid": true,
+        "infoUrl": "https://www.toyota.com/prius/",
+        "imageName": "toyota_prius"
+    },
+    {
+        "id": "13",
+        "name": "Nissan Leaf",
+        "subName": "Nissan",
+        "manufacturer": "Japan",
+        "description": "A compact five-door hatchback all-electric car manufactured by Nissan",
+        "isHybrid": false,
+        "infoUrl": "https://www.nissanusa.com/vehicles/electric-cars/leaf.html",
+        "imageName": "nissan_leaf"
+    },
+    {
+        "id": "14",
+        "name": "Chevrolet Volt",
+        "subName": "Chevrolet",
+        "manufacturer": "USA",
+        "description": "5-door hatchback plug-in hybrid car manufactured by General Motors.",
+        "isHybrid": true,
+        "infoUrl": "https://www.caranddriver.com/chevrolet/volt",
+        "imageName": "chevrolet_volt"
+    },
+    
+    
+    {
+        "id": "15",
+        "name": "Tesla Model 3",
+        "subName": "Tesla",
+        "manufacturer": "USA",
+        "description": "The Tesla Model 3 is a battery electric mid-size sedan with a fastback body style built by Tesla, Inc., introduced in 2017. \nThe vehicle is marketed as being more affordable to more people than previous models made by Tesla. \nThe Model 3 was the world's top-selling plug-in electric car for three years, from 2018 to 2020, before the Tesla Model Y, a crossover SUV based on the Model 3 chassis, took the top spot. \nIn June 2021, the Model 3 became the first electric car to pass global sales of 1 million. \nA facelifted Model 3 with revamped interior and exterior styling was introduced in late 2023 for countries supplied by Gigafactory Shanghai and in early 2024 in North America and other countries supplied by the Tesla Fremont Factory.",
+        "isHybrid": false,
+        "infoUrl": "https://www.tesla.com/model3",
+        "imageName": "tesla_model_3"
+    },
+    {
+        "id": "16",
+        "name": "Seltos",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "INTERIOR\n\nNot a bad seat in the house.\n Step inside the 2025 Seltos and experience luxurious seating materials, bold design elements, intelligent convenience features, and ample room for passengers and gear. With intention in every detail, the Seltos interior is designed to inspire new possibilities for drivers and passengers alike.\n Sound-absorbing windshield glass for a quiet ride\n Available driver-centric 10.25-in. Dual Panoramic Displays for an intuitive touchscreen interface\n Available heated and ventilated front seats\n   Available Smart Power Liftgate for easier loading and unloading\n\n TECHNOLOGY\n Innovative & intelligent.\n Bose® Premium Audio\n\nWith 8 high-performance speakers, a digital amplifier, and dynamic speed compensation, the available Bose® speaker system will elevate your audio experience.\n\n Wireless Charging\n An available wireless charger lets you place your compatible device on the charging pad for cord-free charging on the go.\n\n Digital Key\n The available Digital Key is designed to let you lock and unlock your car, start your engine, and share your keys virtually with family & friends through the Kia Access App.\n\n Everyone Connected\n Help keep everyone’s devices powered up with available USB-C charging ports for front- and rear-seat passengers.",
+        "isHybrid": false,
+        "infoUrl": "https://www.kia.com/us/en/seltos#trims",
+        "imageName": "seltos_kia"
+    },
+    {
+        "id": "17",
+        "name": "EV6",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "Power that moves you.\n\nNear-Instant Acceleration\nAll EV6 models feature the quick response of an electric motor, with select trims like the GT-Line AWD capable of delivering 446 lb-ft of torque for a 0-60 mph time of 4.6 seconds- beating the 335-hp 2021 Porsche Cayenne Coupe in independent ¼ mile tests certified by AMCI Testing.\n\nThrills At Every Turn\nNo matter where the road takes you, getting behind the wheel of an EV6 is an experience like no other. With a low center of gravity, a powerful all-electric engine, impressive handling, and sport suspension on the GT trim, the EV6 is a pleasure to drive.\n\nRWD or e-AWD Capability\nThe EV6 comes standard with RWD and a multi-link rear suspension to deliver responsive and sporty handling. Available models with Torque-vectoring e-AWD feature dual motors to deliver impressive acceleration and capable grip for a range of climates.",
+        "isHybrid": true,
+        "infoUrl": "https://www.kia.com/us/en/ev6",
+        "imageName": "ev6_kia"
+    },
+    {
+        "id": "18",
+        "name": "Nissan Leaf",
+        "subName": "Nissan",
+        "manufacturer": "Japan",
+        "description": "A compact five-door hatchback all-electric car manufactured by Nissan",
+        "isHybrid": false,
+        "infoUrl": "https://www.nissanusa.com/vehicles/electric-cars/leaf.html",
+        "imageName": "nissan_leaf"
+    },
+    {
+        "id": "19",
+        "name": "Sportage",
+        "subName": "Kia",
+        "manufacturer": "Korea",
+        "description": "INTERIOR\n\nBuilt for adventure.\nClass-Leading Cargo Room\n\nThe class-leading cargo room gives you 39.6 cu. ft. of storage room behind the 2nd row of seats so you can enjoy more capacity for gear, coolers, and more. Plus, when the seats are folded, you can nearly double your cargo room to 74.1 cu. ft.\n\nClass-Leading 2nd-Row Legroom\nWith 41.3 in. of class-leading 2nd-row legroom, you’ll be able to comfortably share the ride with family and friends.\nSmart Power Liftgate\n The available Smart Power Liftgate opens automatically by sensing your key, giving you hands-free access to the cargo area.\n Harman Kardon® Premium Audio\nExperience the power of the available Harman Kardon® Premium Audio system, and let your favorite tracks inspire the drive.",
+        "isHybrid": true,
+        "infoUrl": "https://www.kia.com/us/en/sportage#trims",
+        "imageName": "sportage_kia"
+    },
+            
+    {
+        "id": "20",
+        "name": "Elantra",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "The Hyundai Elantra, also known as the Hyundai Avante (Korean: 현대 아반떼), is a compact car produced by the South Korean manufacturer Hyundai since 1990. The Elantra was initially marketed as the Lantra in Australia and some European markets. In Australia,\n this was due to the similarly named Mitsubishi Magna Elante model;[1] similarly, in other markets,\n the name Avante is not used due to its similarity with Audi's \"Avant\" designation, which is used for their line-up of station wagons.[2] The name was standardized as \"Elantra\" worldwide in 2001 (except in South Korea, Singapore and Russia).",
+        "isHybrid": false,
+        "infoUrl": "https://www.hyundai.com/worldwide/en/cars/elantra-2023/highlights",
+        "imageName": "elantra"
+    },
+    
+    {
+        "id": "21",
+        "name": "new Sonata",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "Hyundai’s new design concept starts with the 2022 Sonata with great active safety systems and cutting-edge technology.\nThe 2022 Sonata showcases a sporty four-door-coupe look using proportion, styling, and technology. \nWith an entirely new design, the look at first doesn’t appear to be Hyundai’s traditional style, which forces people to take a second look. The 2022 Sonata embodies the evolution of new Hyundai’s, the first model on a new and innovative vehicle platform that delivers increased strength and reduced weight to enable improvements in design, safety, efficiency, and driving performance.",
+        "isHybrid": false,
+        "infoUrl": "https://www.hyundai.com/worldwide/en/cars/azera-2023/highlights",
+        "imageName": "sonata"
+    },
+    {
+        "id": "22",
+        "name": "Azera",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "The Hyundai Grandeur (Korean: 현대 그랜저) is an executive sedan[1] manufactured and marketed by the South Korean manufacturer Hyundai since 1986, over seven generations.\nFrom 1986 to 1996, the Grandeur was the flagship for Hyundai's South Korean range before the Hyundai Dynasty was introduced. It is marketed globally as the Hyundai Azera. As the Azera, it was the flagship of Hyundai's US and Canadian lineup until the arrival of the Genesis sedan. After the launch of the separate Genesis brand, the Grandeur/Azera resumed its place as the company's flagship.\nAs of the 2017 model year, the Azera is no longer marketed in the United States and Canada.[2] The sedan continued to be available in South Korea and the Middle East.",
+        "isHybrid": false,
+        "infoUrl": "https://www.hyundai.com/worldwide/en/cars/azera-2023/highlights",
+        "imageName": "azera"
+    },
+    {
+        "id": "23",
+        "name": "Ioniq6",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "The Ioniq 6 shares its platform with the Ioniq 5 SUV and its powertrain mostly mirrors that model's offerings. The base 6 makes 149 horsepower and has a single electric motor powering the rear wheels. Single-motor cars equipped with the Long-Range battery pack have 225 horsepower.\nThe more expensive 320-hp dual-motor versions provide all-wheel drive thanks to front and rear electric motors and come only with the bigger battery. \nWhile the Ioniq 6's ride is smooth and its cabin is well-isolated and quiet, its handling is still plenty engaging. Its low center of gravity gives it a planted feel in corners and its steering-wheel paddles allow the driver to select different modes of regenerative braking on the fly.﻿",
+        "isHybrid": true,
+        "infoUrl": "https://www.hyundai.com/worldwide/en/eco/ioniq6/highlights",
+        "imageName": "ioniq6"
+    },
+    {
+        "id": "24",
+        "name": "tucson",
+        "subName": "Hyundai",
+        "manufacturer": "Korea",
+        "description": "The Tucson receives a styling refresh for 2025, its fourth year on the market, that includes updates to its grille, bumpers, and wheels. \nInside, the Tucson's old optional infotainment setup has been swapped for a new one that includes two displays—one for infotainment, the other for gauges—sharing a singular rectangular housing on the dashboard; entry-level models get a single 12.3-inch touchscreen and analog gauges. \nThe steering wheel design has been tweaked and the climate control panel has been updated too.",
+        "isHybrid": true,
+        "infoUrl": "https://www.hyundai.com/worldwide/en/suv/tucson-2023/highlights",
+        "imageName": "tucson"
+    },
+    {
+        "id": "25",
+        "name": "EV6 GT",
+        "subName": "Kia",
+        "manufacturer": "Korea",
+        "description": "Moonscape. That’s what they call this colour. It’s an extra $3295, but this matte hero hue is peak ‘look at me!’ As if the neon green brake callipers weren’t enough.\nStriking thing, this electric SUV-cum-wagon. Not what I’d call pretty, but certainly spectacular.\nYou first notice its fat rear arches. Then its stylishly integrated door handles, giant 21-inch five-spoke alloys, clamshell bonnet and strikingly detailed LED lights everywhere (I don’t want to think about their replacement cost).\nThe ton is up in 3.5 seconds, which let’s not forget is supercar rapid…. in an EV that’s a porky 2185kg. It’s mind-blowing, if not quite in the re-wire brain territory of the Porsche Taycan Turbo S. It, rather amusingly, is $250,000 more than this bonkers Kia.",
+        "isHybrid": true,
+        "infoUrl": "https://www.kia.com/kr/vehicles/ev6-gt/features",
+        "imageName": "ev6gt"
+    },
+    {
+        "id": "26",
+        "name": "Niro Plus",
+        "subName": "Kia",
+        "manufacturer": "Korea",
+        "description": "The Niro was already a trailblazer in its own right as the first bespoke electrified model of Kia's range, offered as a hybrid, plug-in hybrid or BEV. Thinking that it still had some untapped potential left to unleash, however, it seemed the Korean marque thought it fit to give the car another torch to carry.\nThe Niro Plus marks the first PBV released by KiaWith some literal reshaping, what has emerged is the Niro Plus - Kia's first-ever purpose-built vehicle (PBV). In bearing the image of what the firm thinks a car specifically designed for ride-hailing and passenger-carrying should be, it also manages to stand out as quite a unique offering in the market today.",
+        "isHybrid": true,
+        "infoUrl": "https://www.kia.com/kr/vehicles/niro-plus/features",
+        "imageName": "niro_plus"
+    }
+    
+]

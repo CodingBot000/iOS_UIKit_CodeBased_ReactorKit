@@ -1,0 +1,46 @@
+[
+    {
+        "id": "0",
+        "name": "Comfortable"
+    },
+    {
+        "id": "1",
+        "name": "Sophisticated"
+    },
+    {
+        "id": "2",
+        "name": "Dynamic"
+    },
+    {
+        "id": "3",
+        "name": "Luxurious"
+    },
+    {
+        "id": "4",
+        "name": "Innovative"
+    },
+    {
+        "id": "5",
+        "name": "Powerful"
+    },
+    {
+        "id": "6",
+        "name": "Safe"
+    },
+    {
+        "id": "7",
+        "name": "Efficient"
+    },
+    {
+        "id": "8",
+        "name": "Eco-friendly"
+    },
+    {
+        "id": "9",
+        "name": "Agile"
+    },
+    {
+        "id": "10",
+        "name": "Sensuous"
+    }
+]
