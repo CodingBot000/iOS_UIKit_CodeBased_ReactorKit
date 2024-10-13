@@ -214,7 +214,7 @@
             <mxPoint x="230" y="367.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="9e2CFXTMy3aD5x_XGBw3-64" value="CustomViews" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="9e2CFXTMy3aD5x_XGBw3-64" value="&lt;div&gt;Resuable&lt;/div&gt;Component" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="240" y="40" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="9e2CFXTMy3aD5x_XGBw3-65" value="Reactor" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
