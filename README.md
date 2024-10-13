@@ -8,10 +8,10 @@
 </br>
 This is an application designed to provide information for the purpose of introducing products.
 </br>
-The application does not have a server, and the JSON data is hardcoded locally. The code is written as if the data is being requested from and received by a REST API server. For simplicity, the DataSource and Repository components are omitted.
+The application does not have a server, and the JSON data is hardcoded locally. The code is written as if the data is being requested from and received by a REST API server. 
 </br>
 
-[![Video Label](http://img.youtube.com/vi/KpFxCI2vypY/0.jpg)](https://youtu.be/KpFxCI2vypY)
+[![Video Label](http://img.youtube.com/vi/TE6osZQ7Ok4/0.jpg)](https://youtu.be/TE6osZQ7Ok4)
 - Click to view as a 'YouTube' video.  
 
 
@@ -22,5 +22,3 @@ The application does not have a server, and the JSON data is hardcoded locally. 
 - No StoryBoard
 - MVVM Architecture
 
-## Project Structure
-![Alt text](https://github.com/CodingBot000/DisplayShoppingSample_iOS/blob/main/Shopping_IOS_View.drawio.png)
