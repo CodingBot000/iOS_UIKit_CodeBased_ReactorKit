@@ -50,6 +50,7 @@
 		57A4A2A82CBA3608007B93B8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2A72CBA35FC007B93B8 /* WebViewController.swift */; };
 		57A4A2B72CBA7023007B93B8 /* ChipsSelectionReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2B62CBA7012007B93B8 /* ChipsSelectionReactor.swift */; };
 		57A51C262CBBFC1100416E38 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A51C252CBBFC0C00416E38 /* Dimens.swift */; };
+		57A51C292CBC268D00416E38 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A51C282CBC267F00416E38 /* DetailViewReactor.swift */; };
 		AC9B622823D8550B46A8E3DD /* Pods_UIKit_Code_Based_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C71C01AB80E6CF6F63EA55 /* Pods_UIKit_Code_Based_Project.framework */; };
 		E5C09CAB28F2940700B11418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAA28F2940700B11418 /* AppDelegate.swift */; };
 		E5C09CAD28F2940700B11418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAC28F2940700B11418 /* SceneDelegate.swift */; };
@@ -102,6 +103,7 @@
 		57A4A2A72CBA35FC007B93B8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		57A4A2B62CBA7012007B93B8 /* ChipsSelectionReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsSelectionReactor.swift; sourceTree = "<group>"; };
 		57A51C252CBBFC0C00416E38 /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
+		57A51C282CBC267F00416E38 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
 		E3C71C01AB80E6CF6F63EA55 /* Pods_UIKit_Code_Based_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKit_Code_Based_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C09CA728F2940700B11418 /* UIKit-Code-Based-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-Code-Based-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C09CAA28F2940700B11418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				57A4A2532CB532CA007B93B8 /* HorizontalGridScrollReactor.swift */,
 				57A4A2292CB39FE8007B93B8 /* ImageSliderReactor.swift */,
+				57A51C282CBC267F00416E38 /* DetailViewReactor.swift */,
 				57A4A2B62CBA7012007B93B8 /* ChipsSelectionReactor.swift */,
 			);
 			path = Reactor;
@@ -427,6 +430,7 @@
 				57A4A29C2CB837B0007B93B8 /* GridType.swift in Sources */,
 				57A4A2442CB51964007B93B8 /* ChipsSectionView.swift in Sources */,
 				57A4A24A2CB520D4007B93B8 /* GridImageItemViewCell.swift in Sources */,
+				57A51C292CBC268D00416E38 /* DetailViewReactor.swift in Sources */,
 				57A4A2862CB7B08D007B93B8 /* ProfileViewController.swift in Sources */,
 				57A4A2802CB7B048007B93B8 /* CategorysViewController.swift in Sources */,
 				57A4A24E2CB525DF007B93B8 /* TodayProductRepository.swift in Sources */,

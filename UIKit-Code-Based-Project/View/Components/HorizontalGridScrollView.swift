@@ -126,9 +126,6 @@ class HorizontalGridScrollView: UIView, View {
             itemView.translatesAutoresizingMaskIntoConstraints = false
             stackView.addArrangedSubview(itemView)
 
-//            itemView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-//            itemView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
-
             itemView.tapObservable
                 .bind { [weak self] productData in
                     self?.itemTappedSubject.onNext(productData)

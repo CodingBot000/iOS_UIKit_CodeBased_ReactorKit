@@ -8,12 +8,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import ReactorKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, View {
     
-    private let productData: ProductData
-    private let disposeBag = DisposeBag()
- 
+    typealias Reactor = DetailViewReactor
+    var disposeBag = DisposeBag()
+    
     private let customNavBar: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -131,8 +132,9 @@ class DetailViewController: UIViewController {
     
  
     init(productData: ProductData) {
-        self.productData = productData
+  
         super.init(nibName: nil, bundle: nil)
+        self.reactor = DetailViewReactor(productData: productData)
     }
     
     required init?(coder: NSCoder) {
@@ -152,12 +154,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Detail \(productData.name)"
-        
-        MemoryStores.addProdcutHistory(prodcutData: productData)
+
         setupViews()
         setupConstraints()
-        configure(with: productData)
         bindActions()
     }
     
@@ -184,6 +183,80 @@ class DetailViewController: UIViewController {
 
 //        coloredDebug()
     }
+ 
+    
+    func bind(reactor: DetailViewReactor) {
+            
+            likeButton.rx.tap
+                .map { Reactor.Action.toggleLike }
+                .bind(to: reactor.action)
+                .disposed(by: disposeBag)
+       
+            Observable.just(Reactor.Action.loadData)
+                .bind(to: reactor.action)
+                .disposed(by: disposeBag)
+            
+            reactor.state.map { $0.isLiked }
+                .distinctUntilChanged()
+                .bind { [weak self] isLiked in
+                    guard let self = self else { return }
+
+                    let imageName = isLiked ? "heart.fill" : "heart"
+                    
+                    self.likeButton.setImage(UIImage(systemName: imageName), for: .normal)
+                    self.likeButton.accessibilityIdentifier = isLiked ? "liked" : "unliked"
+                    self.likeButton.accessibilityLabel = isLiked ? "Unlike" : "Like"
+                }
+                .disposed(by: disposeBag)
+
+            reactor.state.map { $0.productData }
+                .distinctUntilChanged()
+                .bind { [weak self] productData in
+                    self?.configure(with: productData)
+                }
+                .disposed(by: disposeBag)
+        }
+ 
+    private func bindActions() {
+    
+        backButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.handleBackButton()
+            })
+            .disposed(by: disposeBag)
+        
+        moreInfoButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.handlWebViewOpen()
+            } )
+            .disposed(by: disposeBag)
+    }
+    
+
+    private func handleBackButton() {
+        if let navigationController = self.navigationController {
+            navigationController.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func handlWebViewOpen() {
+        guard let productData = reactor?.currentState.productData,
+            let url = URL(string: productData.infoUrl) else { return }
+        let webVC = WebViewController(url: url)
+        navigationController?.pushViewController(webVC, animated: true)
+
+    }
+    
+  
+    private func configure(with productData: ProductData) {
+        productImageView.image = UIImage(named: productData.imageName)
+        nameLabel.text = productData.name
+        manufacturerLabel.text = productData.manufacturer
+        descLabel.text = productData.description
+    }
+    
     
     private func coloredDebug() {
         verticalStackView.backgroundColor = .magenta
@@ -253,87 +326,25 @@ class DetailViewController: UIViewController {
         descScrollView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
 
     }
-
- 
-    private func bindActions() {
-    
-        backButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.handleBackButton()
-            })
-            .disposed(by: disposeBag)
-        
-        likeButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.handleLikeButton()
-            })
-            .disposed(by: disposeBag)
-        
-        moreInfoButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.handlWebViewOpen()
-            } )
-            .disposed(by: disposeBag)
-    }
-    
-
-    private func handleBackButton() {
-        if let navigationController = self.navigationController {
-            navigationController.popViewController(animated: true)
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    private func handleLikeButton() {
-
-        let isLiked = likeButton.image(for: .normal)?.accessibilityIdentifier == "liked"
-        
-        if isLiked {
-            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            likeButton.accessibilityIdentifier = "unliked"
-            likeButton.accessibilityLabel = "Like"
-        } else {
-            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            likeButton.accessibilityIdentifier = "liked"
-            likeButton.accessibilityLabel = "Unlike"
-        }
-    }
-    
-    private func handlWebViewOpen() {
-
-        if let url = URL(string: productData.infoUrl) {
-            let webVC = WebViewController(url: url)
-            navigationController?.pushViewController(webVC, animated: true)
-        }
-    }
-    
-  
-    private func configure(with productData: ProductData) {
-        productImageView.image = UIImage(named: productData.imageName)
-        nameLabel.text = productData.name
-        manufacturerLabel.text = productData.manufacturer
-        descLabel.text = productData.description
-    }
 }
-
-#if DEBUG
-import SwiftUI
-struct DetailViewControllerRepresentable: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-    }
-    
-    @available(iOS 13.0, *)
-    func makeUIViewController(context: Context) -> UIViewController {
-
-        DetailViewController(productData: ProductData(id: "1", name: "ABCDE", subName: "subNameee", manufacturer: "manufacturer", description: "asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf ", isHybrid: false, infoUrl: "https://www.naver.com", imageName: "sonata"))
-    }
-}
-
-struct DetailViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailViewControllerRepresentable()
-            .previewDisplayName("아이폰 11")
-    }
-}
-#endif
+//
+//#if DEBUG
+//import SwiftUI
+//struct DetailViewControllerRepresentable: UIViewControllerRepresentable {
+//    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+//    }
+//    
+//    @available(iOS 13.0, *)
+//    func makeUIViewController(context: Context) -> UIViewController {
+//
+//        DetailViewController(productData: ProductData(id: "1", name: "ABCDE", subName: "subNameee", manufacturer: "manufacturer", description: "asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf asddf asdffasddf asddf as asdffasddffasddf asdasdffasddf ", isHybrid: false, infoUrl: "https://www.naver.com", imageName: "sonata"))
+//    }
+//}
+//
+//struct DetailViewController_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailViewControllerRepresentable()
+//            .previewDisplayName("아이폰 11")
+//    }
+//}
+//#endif
