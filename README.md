@@ -22,3 +22,5 @@ The application does not have a server, and the JSON data is hardcoded locally. 
 - No StoryBoard
 - MVVM Architecture
 
+## Project Structure
+![Alt text](https://github.com/CodingBot000/iOS_UIKit_CodeBased_ReactorKit/blob/main/ios_codebased_ui_reactorkit.drawio.png)
