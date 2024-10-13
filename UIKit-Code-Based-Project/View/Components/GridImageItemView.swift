@@ -11,7 +11,8 @@ import RxSwift
 import RxCocoa
 
 class GridImageItemView: UIView {
-
+    var disposeBag = DisposeBag()
+    
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -44,8 +45,6 @@ class GridImageItemView: UIView {
     var tapObservable: Observable<ProductData> {
         return tapSubject.asObservable()
     }
-    
-    var disposeBag = DisposeBag()
     
     private var productData: ProductData?
     private var gridType: GridType

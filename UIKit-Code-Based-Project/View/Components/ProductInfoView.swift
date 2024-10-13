@@ -16,7 +16,6 @@ class ProductInfoView: UIView {
         case notEmpty
     }
 
-    
     var disposeBag = DisposeBag()
     
     private let productImageView: UIImageView = {

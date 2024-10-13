@@ -25,7 +25,7 @@
 		57A4A2282CB39DAA007B93B8 /* ImageSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2272CB39DA6007B93B8 /* ImageSliderView.swift */; };
 		57A4A22A2CB39FEC007B93B8 /* ImageSliderReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2292CB39FE8007B93B8 /* ImageSliderReactor.swift */; };
 		57A4A2422CB51946007B93B8 /* ChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2412CB51936007B93B8 /* ChipView.swift */; };
-		57A4A2442CB51964007B93B8 /* SpecialChipsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2432CB5195B007B93B8 /* SpecialChipsSectionView.swift */; };
+		57A4A2442CB51964007B93B8 /* ChipsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2432CB5195B007B93B8 /* ChipsSectionView.swift */; };
 		57A4A2462CB5198F007B93B8 /* PointListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2452CB51989007B93B8 /* PointListRepository.swift */; };
 		57A4A24A2CB520D4007B93B8 /* GridImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2492CB520CC007B93B8 /* GridImageItemView.swift */; };
 		57A4A24E2CB525DF007B93B8 /* TodayProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A24D2CB525D0007B93B8 /* TodayProductRepository.swift */; };
@@ -77,7 +77,7 @@
 		57A4A2272CB39DA6007B93B8 /* ImageSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderView.swift; sourceTree = "<group>"; };
 		57A4A2292CB39FE8007B93B8 /* ImageSliderReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderReactor.swift; sourceTree = "<group>"; };
 		57A4A2412CB51936007B93B8 /* ChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipView.swift; sourceTree = "<group>"; };
-		57A4A2432CB5195B007B93B8 /* SpecialChipsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialChipsSectionView.swift; sourceTree = "<group>"; };
+		57A4A2432CB5195B007B93B8 /* ChipsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsSectionView.swift; sourceTree = "<group>"; };
 		57A4A2452CB51989007B93B8 /* PointListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointListRepository.swift; sourceTree = "<group>"; };
 		57A4A2492CB520CC007B93B8 /* GridImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridImageItemView.swift; sourceTree = "<group>"; };
 		57A4A24D2CB525D0007B93B8 /* TodayProductRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayProductRepository.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 				57A4A28A2CB7C479007B93B8 /* ProductInfoView.swift */,
 				57A4A27C2CB6B470007B93B8 /* SubTitleView.swift */,
 				57A4A24F2CB52974007B93B8 /* HorizontalGridScrollView.swift */,
-				57A4A2432CB5195B007B93B8 /* SpecialChipsSectionView.swift */,
+				57A4A2432CB5195B007B93B8 /* ChipsSectionView.swift */,
 				57A4A1D52CB308AE007B93B8 /* ImageSliderCell.swift */,
 				57A4A2272CB39DA6007B93B8 /* ImageSliderView.swift */,
 			);
@@ -425,7 +425,7 @@
 			files = (
 				57A4A2422CB51946007B93B8 /* ChipView.swift in Sources */,
 				57A4A29C2CB837B0007B93B8 /* GridType.swift in Sources */,
-				57A4A2442CB51964007B93B8 /* SpecialChipsSectionView.swift in Sources */,
+				57A4A2442CB51964007B93B8 /* ChipsSectionView.swift in Sources */,
 				57A4A24A2CB520D4007B93B8 /* GridImageItemView.swift in Sources */,
 				57A4A2862CB7B08D007B93B8 /* ProfileViewController.swift in Sources */,
 				57A4A2802CB7B048007B93B8 /* CategorysViewController.swift in Sources */,

@@ -6,6 +6,7 @@ import RxSwift
 
 
 class MainViewController: UIViewController {
+    var disposeBag = DisposeBag()
     
     let mainScrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -43,7 +44,7 @@ class MainViewController: UIViewController {
     let bannerSliderView = ImageSliderView()
 
     let subTitleView1 = SubTitleView(title: "What you like", buttonName: "See All", isButtonVisible: true)
-    let specialChipsSectionView = SpecialChipsSectionView(frame: .zero)
+    let chipsSectionView = ChipsSectionView(frame: .zero)
     
     let subTitleViewTodayPublished = SubTitleView(title: "Today Publishing Product", isButtonVisible: false)
     let todayPublishingView =
@@ -62,8 +63,7 @@ class MainViewController: UIViewController {
     let recommendSection =
     HorizontalGridScrollView(frame: .zero, repositoryDataType: RepositoryDataType.Recommend, gridType: GridType.rectangle)
     
-    var disposeBag = DisposeBag()
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -84,7 +84,7 @@ class MainViewController: UIViewController {
     
     private func setupSubviews() {
         [bannerSliderView,
-         subTitleView1, specialChipsSectionView,
+         subTitleView1, chipsSectionView,
          subTitleViewTodayPublished, todayPublishingView,
          subTitleViewHotSNS, hotSNSSection,
          subTitleViewGenre, genreSection,

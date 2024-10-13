@@ -25,7 +25,7 @@ extension MainViewController {
             .disposed(by: disposeBag)
         
 
-         specialChipsSectionView.chipTapped
+         chipsSectionView.chipTapped
              .subscribe(onNext: { [weak self] (index, data) in
                  self?.handleChipSelection(index: index, data: data)
              })
@@ -146,7 +146,7 @@ extension MainViewController {
        ])
        
        NSLayoutConstraint.activate([
-           specialChipsSectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70)
+            chipsSectionView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70)
        ])
        
         NSLayoutConstraint.activate([

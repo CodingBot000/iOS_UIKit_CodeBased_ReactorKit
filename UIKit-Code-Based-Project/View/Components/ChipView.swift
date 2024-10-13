@@ -46,7 +46,11 @@ class ChipView: UIView {
             config.baseBackgroundColor = backgroundColorCustom
             config.baseForegroundColor = .black
             config.cornerStyle = .medium
-            config.contentInsets = NSDirectionalEdgeInsets(top: Dimens.chipViewVerticalInsets, leading: Dimens.chipViewhorizontalInsets, bottom: Dimens.chipViewVerticalInsets, trailing: Dimens.chipViewhorizontalInsets)
+            config.contentInsets = NSDirectionalEdgeInsets(
+                top: Dimens.chipViewVerticalInsets,
+                leading: Dimens.chipViewhorizontalInsets,
+                bottom: Dimens.chipViewVerticalInsets,
+                trailing: Dimens.chipViewhorizontalInsets)
             button.configuration = config
             button.titleLabel?.numberOfLines = 1
             button.titleLabel?.lineBreakMode = .byClipping
@@ -59,7 +63,11 @@ class ChipView: UIView {
             button.setTitleColor(.black, for: .normal)
             button.layer.cornerRadius = 8
             button.clipsToBounds = true
-            button.contentEdgeInsets = UIEdgeInsets(top: Dimens.chipViewVerticalInsets, left: Dimens.chipViewhorizontalInsets, bottom: Dimens.chipViewVerticalInsets, right: Dimens.chipViewhorizontalInsets)
+            button.contentEdgeInsets = UIEdgeInsets(
+                top: Dimens.chipViewVerticalInsets,
+                left: Dimens.chipViewhorizontalInsets,
+                bottom: Dimens.chipViewVerticalInsets,
+                right: Dimens.chipViewhorizontalInsets)
 
             button.titleLabel?.numberOfLines = 1
             button.titleLabel?.lineBreakMode = .byClipping
@@ -79,18 +87,18 @@ class ChipView: UIView {
 extension ChipView {
 
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: self.topAnchor, constant: Dimens.chipViewMargin),
-            button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Dimens.chipViewMargin),
-            button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: Dimens.chipViewMargin * -1),
-            button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Dimens.chipViewMargin * -1)
-        ])
+       button.snp.makeConstraints { make in
+           make.top.equalToSuperview().offset(Dimens.chipViewMargin)
+           make.leading.equalToSuperview().offset(Dimens.chipViewMargin)
+           make.trailing.equalToSuperview().offset(-Dimens.chipViewMargin)
+           make.bottom.equalToSuperview().offset(-Dimens.chipViewMargin)
+       }
 
-        button.setContentHuggingPriority(.required, for: .horizontal)
-        button.setContentCompressionResistancePriority(.required, for: .horizontal)
+       button.setContentHuggingPriority(.required, for: .horizontal)
+       button.setContentCompressionResistancePriority(.required, for: .horizontal)
 
-        self.setContentHuggingPriority(.required, for: .horizontal)
-        self.setContentCompressionResistancePriority(.required, for: .horizontal)
-    }
+       self.setContentHuggingPriority(.required, for: .horizontal)
+       self.setContentCompressionResistancePriority(.required, for: .horizontal)
+   }
 }
 

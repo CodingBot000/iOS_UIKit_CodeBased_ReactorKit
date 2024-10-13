@@ -11,7 +11,8 @@ import RxCocoa
 
 class SubTitleView: UIView {
     
-
+    var disposeBag = DisposeBag()
+  
     private let titleLabel = UILabel()
     private let actionButton = UIButton(type: .system)
     
@@ -19,9 +20,7 @@ class SubTitleView: UIView {
     var buttonTapped: Observable<Void> {
         return buttonTappedSubject.asObservable()
     }
-    
-    var disposeBag = DisposeBag()
-    
+  
     init(title: String, buttonName: String? = nil, isButtonVisible: Bool = false) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false

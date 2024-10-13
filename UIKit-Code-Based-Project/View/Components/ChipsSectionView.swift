@@ -1,5 +1,5 @@
 //
-//  SpecialChipsSectionView.swift
+//  ChipsSectionView.swift
 //  UIKit-Code-Based-Project
 //
 //  Created by switchMac on 10/8/24.
@@ -10,7 +10,7 @@ import ReactorKit
 import RxSwift
 import RxCocoa
 
-class SpecialChipsSectionView: UIView, View {
+class ChipsSectionView: UIView, View {
 
     typealias Reactor = ChipsSelectionReactor
     var disposeBag = DisposeBag()
@@ -89,12 +89,12 @@ class SpecialChipsSectionView: UIView, View {
         verticalStackView.addArrangedSubview(horizontalStackView2)
     }
 
-    private func setupChips(specialList: [ChipData]) {
+    private func setupChips(chipList: [ChipData]) {
 
         horizontalStackView1.arrangedSubviews.forEach { $0.removeFromSuperview() }
         horizontalStackView2.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-        let (firstHalf, secondHalf) = specialList.splitByNameCharacterCount()
+        let (firstHalf, secondHalf) = chipList.splitByNameCharacterCount()
 
         makeChipListUi(chipList: firstHalf, addStartIdx: 0, containerView: horizontalStackView1)
         makeChipListUi(chipList: secondHalf, addStartIdx: firstHalf.count, containerView: horizontalStackView2)
@@ -138,12 +138,12 @@ class SpecialChipsSectionView: UIView, View {
 
     func setupItems(_ datas: [ChipData]) {
         guard datas.count > 0 else { return }
-        setupChips(specialList: datas)
+        setupChips(chipList: datas)
     }
 
 }
 
-extension SpecialChipsSectionView {
+extension ChipsSectionView {
     private func setupConstraints() {
         scrollView.pinToEdges(of: self)
         contentView.pinToEdges(of: scrollView)
