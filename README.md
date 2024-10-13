@@ -1,4 +1,4 @@
-<h1 align="center">DisplayShopping</h1>
+<h1 align="center">Code Based UI with UIKit, ReactorKit Sample</h1>
 
 <p align="center">  
  This ToyProject make modern iOS development with Swift, Code Based UI (with UIKit) without StoryBoard, ReactorKit, RxSwift based on MVVM architecture.
