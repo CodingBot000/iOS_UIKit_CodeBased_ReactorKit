@@ -11,7 +11,7 @@ This is an application designed to provide information for the purpose of introd
 The application does not have a server, and the JSON data is hardcoded locally. The code is written as if the data is being requested from and received by a REST API server. 
 </br>
 
-[![Video Label](http://img.youtube.com/vi/TE6osZQ7Ok4/0.jpg)](https://youtu.be/TE6osZQ7Ok4)
+[![Video Label](http://img.youtube.com/vi/DRCTsK2dnwY/0.jpg)](https://youtu.be/DRCTsK2dnwY)
 - Click to view as a 'YouTube' video.  
 
 
