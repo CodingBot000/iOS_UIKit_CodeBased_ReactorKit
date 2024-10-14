@@ -127,7 +127,7 @@ class ChipsSectionView: UIView, View {
 
    func bind(reactor: Reactor) {
 
-       reactor.state.map { $0.productDatas }
+       reactor.state.map { $0.datas }
            .distinctUntilChanged()
            .bind { [weak self] datas in
                self?.setupItems(datas)

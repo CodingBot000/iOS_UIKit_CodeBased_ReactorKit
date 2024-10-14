@@ -147,42 +147,6 @@ class ProductInfoView: UIView {
 //        coloredForDebugging()
     }
     
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
-
-            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Dimens.containerPadding),
-            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Dimens.containerPadding * -1),
-            containerView.topAnchor.constraint(equalTo: topAnchor, constant: Dimens.containerPadding),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Dimens.containerPadding * -1),
-            containerView.heightAnchor.constraint(equalToConstant: Dimens.containerHeight),
-            
-            masterStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            masterStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            masterStackView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            masterStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-
-            productImageView.widthAnchor.constraint(equalToConstant: Dimens.productImageSize),
-            productImageView.heightAnchor.constraint(equalToConstant: Dimens.productImageSize),
-            
-            playButton.widthAnchor.constraint(equalToConstant: Dimens.playButtonSize),
-            playButton.heightAnchor.constraint(equalToConstant: Dimens.playButtonSize),
-            prevButton.widthAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
-            prevButton.heightAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
-            nextButton.widthAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
-            nextButton.heightAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize)
-        ])
-
-    }
-    
-    private func coloredForDebugging() {
-
-        nameLabel.textColor = .systemGray2
-        manufacturerLabel.textColor = .systemGray3
-        descStackView.backgroundColor = .systemGray
-        containerView.backgroundColor = .magenta
-        masterStackView.backgroundColor = .systemGray
-    }
-    
     private func configure(with productData: ProductData) {
         let state: HistoryState = productData.id.isEmpty ? .empty : .notEmpty
         
@@ -246,4 +210,42 @@ class ProductInfoView: UIView {
         onNextButtonTapped?()
     }
 
+}
+
+extension ProductInfoView {
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Dimens.containerPadding),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Dimens.containerPadding * -1),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: Dimens.containerPadding),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Dimens.containerPadding * -1),
+            containerView.heightAnchor.constraint(equalToConstant: Dimens.containerHeight),
+            
+            masterStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            masterStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            masterStackView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            masterStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+
+            productImageView.widthAnchor.constraint(equalToConstant: Dimens.productImageSize),
+            productImageView.heightAnchor.constraint(equalToConstant: Dimens.productImageSize),
+            
+            playButton.widthAnchor.constraint(equalToConstant: Dimens.playButtonSize),
+            playButton.heightAnchor.constraint(equalToConstant: Dimens.playButtonSize),
+            prevButton.widthAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
+            prevButton.heightAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
+            nextButton.widthAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize),
+            nextButton.heightAnchor.constraint(equalToConstant: Dimens.prevForwardButtonSize)
+        ])
+
+    }
+    
+    private func coloredForDebugging() {
+
+        nameLabel.textColor = .systemGray2
+        manufacturerLabel.textColor = .systemGray3
+        descStackView.backgroundColor = .systemGray
+        containerView.backgroundColor = .magenta
+        masterStackView.backgroundColor = .systemGray
+    }
 }

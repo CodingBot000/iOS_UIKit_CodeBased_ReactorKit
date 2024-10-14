@@ -68,14 +68,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubview(mainScrollView)
-        
-        mainScrollView.addSubview(mainContainerView)
-        view.addSubview(mainBottomInfoBar)
-        setupBottomInfoBar()
-
-        mainContainerView.addSubview(mainContentStackView)
-
         setupSubviews()
         extensionFunctions()
         
@@ -83,6 +75,12 @@ class MainViewController: UIViewController {
     }
     
     private func setupSubviews() {
+        view.addSubview(mainScrollView)
+        mainScrollView.addSubview(mainContainerView)
+        view.addSubview(mainBottomInfoBar)
+
+        mainContainerView.addSubview(mainContentStackView)
+
         [bannerSliderView,
          subTitleView1, chipsSectionView,
          subTitleViewTodayPublished, todayPublishingView,
@@ -93,8 +91,8 @@ class MainViewController: UIViewController {
             mainContentStackView.addArrangedSubview(subTitleView)
         }
         
+        setupBottomInfoBar()
      }
-
     
     private func setupBottomInfoBar() {
         let product = MemoryStores.currentProdcutHistory()
@@ -114,21 +112,6 @@ class MainViewController: UIViewController {
             productInfoView.bottomAnchor.constraint(equalTo: mainBottomInfoBar.bottomAnchor),
             productInfoView.heightAnchor.constraint(equalToConstant: 60)
 
-        ])
-        
+        ])   
     }
-    
-   private func coloredForDebugging() {
-       // for debugging
-       view.backgroundColor = .systemYellow
-       view.safeAreaLayoutGuide.owningView?.backgroundColor = .magenta
-       mainScrollView.backgroundColor = .blue
-       mainContainerView.backgroundColor = .darkGray
-       subTitleViewTodayPublished.backgroundColor = .green
-       todayPublishingView.backgroundColor = .systemPink
-       subTitleViewHotSNS.backgroundColor = .systemTeal
-       todayPublishingView.backgroundColor = .brown
-       
-       mainBottomInfoBar.backgroundColor = .red
-   }
 }

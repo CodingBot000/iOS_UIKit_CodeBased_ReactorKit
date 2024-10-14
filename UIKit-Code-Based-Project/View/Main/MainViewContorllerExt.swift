@@ -14,10 +14,7 @@ extension MainViewController {
         setupBindings()
     }
 
-    
-    
     private func setupBindings() {
-
         bannerSliderView.selectedSliderData
             .subscribe(onNext: { [weak self] (productData, index) in
                 self?.handleImageSelection(productData: productData, index: index)
@@ -37,8 +34,8 @@ extension MainViewController {
                     self?.handleProductItemTapped(productData: productData)
                 })
                 .disposed(by: disposeBag)
-            
         }
+        
         subTitleView1.buttonTapped
             .subscribe(onNext: { [weak self] in
                 self?.handleButtonTap()
@@ -97,7 +94,21 @@ extension MainViewController {
 
 
 extension MainViewController {
-
+    
+   func coloredForDebugging() {
+       // for debugging
+       view.backgroundColor = .systemYellow
+       view.safeAreaLayoutGuide.owningView?.backgroundColor = .magenta
+       mainScrollView.backgroundColor = .blue
+       mainContainerView.backgroundColor = .darkGray
+       subTitleViewTodayPublished.backgroundColor = .green
+       todayPublishingView.backgroundColor = .systemPink
+       subTitleViewHotSNS.backgroundColor = .systemTeal
+       todayPublishingView.backgroundColor = .brown
+       
+       mainBottomInfoBar.backgroundColor = .red
+   }
+    
     func bottomBarContentConstraints(productInfoView: UIView) {
         NSLayoutConstraint.activate([
             productInfoView.leadingAnchor.constraint(equalTo: mainBottomInfoBar.leadingAnchor),

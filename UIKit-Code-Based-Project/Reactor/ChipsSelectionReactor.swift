@@ -15,11 +15,11 @@ class ChipsSelectionReactor: Reactor {
     }
     
     enum Mutation {
-        case setProducts([ChipData])
+        case setDatas([ChipData])
     }
     
     struct State {
-        var productDatas: [ChipData] = []
+        var datas: [ChipData] = []
     }
     
     let initialState: State
@@ -34,7 +34,7 @@ class ChipsSelectionReactor: Reactor {
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .fetchDataList:
-            return PointListRepository.fetchDatas().map { Mutation.setProducts($0) }
+            return PointListRepository.fetchDatas().map { Mutation.setDatas($0) }
             
         }
     }
@@ -42,8 +42,8 @@ class ChipsSelectionReactor: Reactor {
     func reduce(state: State, mutation: Mutation) -> State {
         var newState = state
         switch mutation {
-        case .setProducts(let datas):
-            newState.productDatas = datas
+        case .setDatas(let datas):
+            newState.datas = datas
         }
         return newState
     }

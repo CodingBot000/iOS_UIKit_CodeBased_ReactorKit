@@ -77,9 +77,22 @@ class GridImageItemViewCell: UIView {
         imageView.layer.masksToBounds = true
     }
     
-    private func setupConstraints() {
-        let imageAspectRatio = gridType.aspectRatio
+    private func setupGesture() {
+
+        let tapGesture = UITapGestureRecognizer()
+        self.addGestureRecognizer(tapGesture)
         
+        tapGesture.rx.event
+            .bind { [weak self] _ in
+                guard let self = self, let data = self.productData else { return }
+                self.tapSubject.onNext(data)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    
+    private func setupConstraints() {
+
         if (gridType == GridType.wideWidth) {
             NSLayoutConstraint.activate([
                 imageView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -112,17 +125,5 @@ class GridImageItemViewCell: UIView {
         ])
     }
     
-    private func setupGesture() {
-
-        let tapGesture = UITapGestureRecognizer()
-        self.addGestureRecognizer(tapGesture)
-        
-        tapGesture.rx.event
-            .bind { [weak self] _ in
-                guard let self = self, let data = self.productData else { return }
-                self.tapSubject.onNext(data)
-            }
-            .disposed(by: disposeBag)
-    }
 }
 

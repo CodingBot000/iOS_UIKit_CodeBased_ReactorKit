@@ -86,20 +86,6 @@ class ImageSliderView: UIView, View {
         self.addSubview(pageControl)
     }
     
-    private func setupConstraints() {
-  
-        NSLayoutConstraint.activate([
-       
-            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -10),
-            
-            pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 20)
-        ])
-    }
 
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] _ in
@@ -169,8 +155,22 @@ class ImageSliderView: UIView, View {
         pageControl.currentPage = index
         collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .left, animated: false)
     }
+    
+    private func setupConstraints() {
+  
+        NSLayoutConstraint.activate([
+       
+            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -10),
+            
+            pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            pageControl.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
 }
-
 
 extension ImageSliderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -50,18 +50,8 @@ class HorizontalGridScrollView: UIView, View {
         setupView()
         setupConstraints()
         setUpReactor(repositoryDataType: repositoryDataType)
-       
-        
     }
-    
-    required init?(coder: NSCoder, repositoryDataType: RepositoryDataType, gridType: GridType) {
-        self.gridType = gridType
-        super.init(coder: coder)
-        self.translatesAutoresizingMaskIntoConstraints = false
-        setupView()
-        setupConstraints()
-        setUpReactor(repositoryDataType: RepositoryDataType.Today)
-    }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -91,22 +81,7 @@ class HorizontalGridScrollView: UIView, View {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
     }
-    
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
 
-            scrollView.topAnchor.constraint(equalTo: self.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
-        ])
-    }
 
     func bind(reactor: Reactor) {
         reactor.state.map { $0.products }
@@ -134,5 +109,21 @@ class HorizontalGridScrollView: UIView, View {
         }
         
         layoutIfNeeded()
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+
+            scrollView.topAnchor.constraint(equalTo: self.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+        ])
     }
 }
