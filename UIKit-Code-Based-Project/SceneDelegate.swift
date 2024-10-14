@@ -29,7 +29,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         
      
-        let mainVC = MainViewController()
+//        let mainVC = MainViewController()
+        let mainVC = MainCollectionViewController()
         let categoriesVC = CategoriesViewController()
         let cartVC = CartViewController()
         let searchVC = SearchViewController()

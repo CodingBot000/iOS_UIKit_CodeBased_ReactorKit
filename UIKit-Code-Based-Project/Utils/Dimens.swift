@@ -6,11 +6,12 @@
 //
 
 class Dimens {
+    static let bannerViewDescPadding = 15.0
     static let gridSectionHeight = 180.0
     static let gridImageRectangleSize = 120.0
     static let gridImageWideWidth = 210.0
     static let bottomInfoBarHeight = 60.0
-    static let bannerSliderHeight = 300.0
+    static let bannerSliderHeight = 370.0
     
     
     static let productImageSize = 50.0
@@ -26,6 +27,7 @@ class Dimens {
     static let chipViewhorizontalInsets = 8.0
     static let chipViewMargin = 4.0
 
+    static let subTitleViewHeight = 40.0
     static let subTitleViewPadding = 16.0
 
 }

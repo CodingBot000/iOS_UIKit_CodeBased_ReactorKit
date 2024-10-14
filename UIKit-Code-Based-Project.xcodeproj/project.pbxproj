@@ -51,6 +51,8 @@
 		57A4A2B72CBA7023007B93B8 /* ChipsSelectionReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2B62CBA7012007B93B8 /* ChipsSelectionReactor.swift */; };
 		57A51C262CBBFC1100416E38 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A51C252CBBFC0C00416E38 /* Dimens.swift */; };
 		57A51C292CBC268D00416E38 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A51C282CBC267F00416E38 /* DetailViewReactor.swift */; };
+		57A51C332CBD214F00416E38 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A51C322CBD214C00416E38 /* MainCollectionViewController.swift */; };
+		57A51C352CBD21B600416E38 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A51C342CBD21B100416E38 /* MainCollectionViewCell.swift */; };
 		AC9B622823D8550B46A8E3DD /* Pods_UIKit_Code_Based_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C71C01AB80E6CF6F63EA55 /* Pods_UIKit_Code_Based_Project.framework */; };
 		E5C09CAB28F2940700B11418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAA28F2940700B11418 /* AppDelegate.swift */; };
 		E5C09CAD28F2940700B11418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAC28F2940700B11418 /* SceneDelegate.swift */; };
@@ -104,6 +106,8 @@
 		57A4A2B62CBA7012007B93B8 /* ChipsSelectionReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsSelectionReactor.swift; sourceTree = "<group>"; };
 		57A51C252CBBFC0C00416E38 /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		57A51C282CBC267F00416E38 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
+		57A51C322CBD214C00416E38 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		57A51C342CBD21B100416E38 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3C71C01AB80E6CF6F63EA55 /* Pods_UIKit_Code_Based_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKit_Code_Based_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C09CA728F2940700B11418 /* UIKit-Code-Based-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-Code-Based-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C09CAA28F2940700B11418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 			children = (
 				E5C09CAE28F2940700B11418 /* MainViewController.swift */,
 				57A4A27A2CB6628E007B93B8 /* MainViewContorllerExt.swift */,
+				57A51C322CBD214C00416E38 /* MainCollectionViewController.swift */,
+				57A51C342CBD21B100416E38 /* MainCollectionViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 				57A4A2442CB51964007B93B8 /* ChipsSectionView.swift in Sources */,
 				57A4A24A2CB520D4007B93B8 /* GridImageItemViewCell.swift in Sources */,
 				57A51C292CBC268D00416E38 /* DetailViewReactor.swift in Sources */,
+				57A51C332CBD214F00416E38 /* MainCollectionViewController.swift in Sources */,
 				57A4A2862CB7B08D007B93B8 /* ProfileViewController.swift in Sources */,
 				57A4A2802CB7B048007B93B8 /* CategorysViewController.swift in Sources */,
 				57A4A24E2CB525DF007B93B8 /* TodayProductRepository.swift in Sources */,
@@ -462,6 +469,7 @@
 				57A4A22A2CB39FEC007B93B8 /* ImageSliderReactor.swift in Sources */,
 				57A4A2122CB30ADE007B93B8 /* ChipData.swift in Sources */,
 				57A4A2132CB30ADE007B93B8 /* ProductData.swift in Sources */,
+				57A51C352CBD21B600416E38 /* MainCollectionViewCell.swift in Sources */,
 				57A4A27B2CB66298007B93B8 /* MainViewContorllerExt.swift in Sources */,
 				57A4A2152CB30ADE007B93B8 /* BannersRepository.swift in Sources */,
 				57A4A2172CB30ADE007B93B8 /* FavoriteRepository.swift in Sources */,

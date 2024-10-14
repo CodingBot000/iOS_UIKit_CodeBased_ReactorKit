@@ -57,6 +57,10 @@ class SubTitleView: UIView {
     }
     
     private func setupConstraints() {
+        self.snp.makeConstraints { make in
+            make.height.lessThanOrEqualTo(Dimens.subTitleViewHeight)
+        }
+        
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(Dimens.subTitleViewPadding)
             make.centerY.equalToSuperview()
@@ -68,7 +72,7 @@ class SubTitleView: UIView {
         }
     }
 
-    private func configure(title: String, buttonName: String?, isButtonVisible: Bool) {
+    func configure(title: String, buttonName: String?, isButtonVisible: Bool) {
         titleLabel.text = title
         
         if let buttonName = buttonName, !buttonName.isEmpty {
