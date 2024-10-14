@@ -26,5 +26,6 @@ class Dimens {
     static let chipViewhorizontalInsets = 8.0
     static let chipViewMargin = 4.0
 
+    static let subTitleViewPadding = 16.0
 
 }

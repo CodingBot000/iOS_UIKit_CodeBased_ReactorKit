@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 
 class SubTitleView: UIView {
     
@@ -56,16 +57,15 @@ class SubTitleView: UIView {
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
+        titleLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(Dimens.subTitleViewPadding)
+            make.centerY.equalToSuperview()
+        }
 
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-            actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            actionButton.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: actionButton.leadingAnchor, constant: -8)
-        ])
+        actionButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(Dimens.subTitleViewPadding * -1)
+            make.centerY.equalToSuperview()
+        }
     }
 
     private func configure(title: String, buttonName: String?, isButtonVisible: Bool) {
