@@ -49,7 +49,7 @@ class ImageSliderView: UIView, View {
         self.imageSliderType = imageSliderType
         super.init(frame: frame)
 //        translatesAutoresizingMaskIntoConstraints = false
-        
+
         setupCollectionView()
         setupPageControl()
         setupConstraints(imageSliderType: imageSliderType, isShowPageControl: isShowPageControl)
@@ -218,6 +218,7 @@ extension ImageSliderView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.configure(with: internalSliderDatas[indexPath.item], imageSliderType: self.imageSliderType)
+
         return cell
     }
 }
