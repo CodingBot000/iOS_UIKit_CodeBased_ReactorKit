@@ -15,7 +15,7 @@ class MainCollectionViewController: UIViewController {
     let collectionView: UICollectionView
     let mainBottomInfoBar = UIView()
     
-    let collectionItems: [MainCollectionViewItem] = [
+    let collectionItems: [MainCollectionViewCellType] = [
         .banner,
         .chipsSection,
         .gridSection(title: "Today Publishing Product", buttonName: nil, isButtonVisible: false, repositoryDataType: .Today, gridType: .rectangle),
