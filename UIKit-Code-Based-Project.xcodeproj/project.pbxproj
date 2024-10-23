@@ -34,7 +34,6 @@
 		57A4A2562CB54875007B93B8 /* ProductCommonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2552CB5486C007B93B8 /* ProductCommonRepository.swift */; };
 		57A4A2582CB54972007B93B8 /* HotNewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2572CB54967007B93B8 /* HotNewsRepository.swift */; };
 		57A4A25A2CB54999007B93B8 /* RecommendRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2592CB54994007B93B8 /* RecommendRepository.swift */; };
-		57A4A27B2CB66298007B93B8 /* MainViewContorllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A27A2CB6628E007B93B8 /* MainViewContorllerExt.swift */; };
 		57A4A27D2CB6B474007B93B8 /* SubTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A27C2CB6B470007B93B8 /* SubTitleView.swift */; };
 		57A4A2802CB7B048007B93B8 /* CategorysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A27F2CB7B03E007B93B8 /* CategorysViewController.swift */; };
 		57A4A2822CB7B072007B93B8 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4A2812CB7B06E007B93B8 /* CartViewController.swift */; };
@@ -56,7 +55,6 @@
 		AC9B622823D8550B46A8E3DD /* Pods_UIKit_Code_Based_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C71C01AB80E6CF6F63EA55 /* Pods_UIKit_Code_Based_Project.framework */; };
 		E5C09CAB28F2940700B11418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAA28F2940700B11418 /* AppDelegate.swift */; };
 		E5C09CAD28F2940700B11418 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAC28F2940700B11418 /* SceneDelegate.swift */; };
-		E5C09CAF28F2940700B11418 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09CAE28F2940700B11418 /* MainViewController.swift */; };
 		E5C09CB428F2940800B11418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C09CB328F2940800B11418 /* Assets.xcassets */; };
 		E5C09CB728F2940800B11418 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C09CB528F2940800B11418 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -89,7 +87,6 @@
 		57A4A2552CB5486C007B93B8 /* ProductCommonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCommonRepository.swift; sourceTree = "<group>"; };
 		57A4A2572CB54967007B93B8 /* HotNewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotNewsRepository.swift; sourceTree = "<group>"; };
 		57A4A2592CB54994007B93B8 /* RecommendRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendRepository.swift; sourceTree = "<group>"; };
-		57A4A27A2CB6628E007B93B8 /* MainViewContorllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewContorllerExt.swift; sourceTree = "<group>"; };
 		57A4A27C2CB6B470007B93B8 /* SubTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleView.swift; sourceTree = "<group>"; };
 		57A4A27F2CB7B03E007B93B8 /* CategorysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorysViewController.swift; sourceTree = "<group>"; };
 		57A4A2812CB7B06E007B93B8 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +109,6 @@
 		E5C09CA728F2940700B11418 /* UIKit-Code-Based-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-Code-Based-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C09CAA28F2940700B11418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5C09CAC28F2940700B11418 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5C09CAE28F2940700B11418 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E5C09CB328F2940800B11418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5C09CB628F2940800B11418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5C09CB828F2940800B11418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +143,16 @@
 				E7F527EB14446A14522E98FA /* Pods-UIKit-Code-Based-Project.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		579EEE312CC8FCAD005A9A19 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57A4A2412CB51936007B93B8 /* ChipView.swift */,
+				57A4A2492CB520CC007B93B8 /* GridImageItemViewCell.swift */,
+				57A4A1D52CB308AE007B93B8 /* ImageSliderCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		57A4A1EB2CB30AC1007B93B8 /* Utils */ = {
@@ -205,13 +211,11 @@
 		57A4A2402CB5192B007B93B8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				57A4A2412CB51936007B93B8 /* ChipView.swift */,
-				57A4A2492CB520CC007B93B8 /* GridImageItemViewCell.swift */,
+				579EEE312CC8FCAD005A9A19 /* Cells */,
 				57A4A28A2CB7C479007B93B8 /* ProductInfoView.swift */,
 				57A4A27C2CB6B470007B93B8 /* SubTitleView.swift */,
 				57A4A24F2CB52974007B93B8 /* HorizontalGridScrollView.swift */,
 				57A4A2432CB5195B007B93B8 /* ChipsSectionView.swift */,
-				57A4A1D52CB308AE007B93B8 /* ImageSliderCell.swift */,
 				57A4A2272CB39DA6007B93B8 /* ImageSliderView.swift */,
 			);
 			path = Components;
@@ -235,8 +239,6 @@
 		57A4A2872CB7BA23007B93B8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E5C09CAE28F2940700B11418 /* MainViewController.swift */,
-				57A4A27A2CB6628E007B93B8 /* MainViewContorllerExt.swift */,
 				57A51C322CBD214C00416E38 /* MainCollectionViewController.swift */,
 				57A51C342CBD21B100416E38 /* MainCollectionViewCell.swift */,
 			);
@@ -448,7 +450,6 @@
 				57A4A2842CB7B07F007B93B8 /* SearchViewController.swift in Sources */,
 				57A4A2822CB7B072007B93B8 /* CartViewController.swift in Sources */,
 				57A4A2562CB54875007B93B8 /* ProductCommonRepository.swift in Sources */,
-				E5C09CAF28F2940700B11418 /* MainViewController.swift in Sources */,
 				57A4A28B2CB7C47E007B93B8 /* ProductInfoView.swift in Sources */,
 				57A4A2A42CB96B2A007B93B8 /* MemoryStores.swift in Sources */,
 				57A4A2B72CBA7023007B93B8 /* ChipsSelectionReactor.swift in Sources */,
@@ -470,7 +471,6 @@
 				57A4A2122CB30ADE007B93B8 /* ChipData.swift in Sources */,
 				57A4A2132CB30ADE007B93B8 /* ProductData.swift in Sources */,
 				57A51C352CBD21B600416E38 /* MainCollectionViewCell.swift in Sources */,
-				57A4A27B2CB66298007B93B8 /* MainViewContorllerExt.swift in Sources */,
 				57A4A2152CB30ADE007B93B8 /* BannersRepository.swift in Sources */,
 				57A4A2172CB30ADE007B93B8 /* FavoriteRepository.swift in Sources */,
 				57A4A2A02CB83BF0007B93B8 /* GenreRepository.swift in Sources */,
