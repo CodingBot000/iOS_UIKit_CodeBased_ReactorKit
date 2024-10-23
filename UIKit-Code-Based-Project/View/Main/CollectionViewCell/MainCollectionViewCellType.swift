@@ -11,7 +11,9 @@ import RxCocoa
 
 
 enum MainCollectionViewCellType {
-    case banner
+    case fullBanner
+    case centerBanner
+    case narrowBanner
     case chipsSection
     case gridSection(title: String, buttonName: String?, isButtonVisible: Bool, repositoryDataType: RepositoryDataType, gridType: GridType)
 }

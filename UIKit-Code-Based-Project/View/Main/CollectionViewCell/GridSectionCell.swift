@@ -48,6 +48,17 @@ class GridSectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+        if gridScrollView != nil {
+            gridScrollView.removeFromSuperview()
+            stackView.removeArrangedSubview(gridScrollView)
+            gridScrollView = nil
+        }
+    }
+    
     func configure(title: String, buttonName: String?, isButtonVisible: Bool, repositoryDataType: RepositoryDataType, gridType: GridType) {
         subTitleView.configure(
             title: title, buttonName: buttonName, isButtonVisible: isButtonVisible)
@@ -63,16 +74,6 @@ class GridSectionCell: UICollectionViewCell {
         gridScrollView.heightAnchor.constraint(equalToConstant: Dimens.gridSectionHeight).isActive = true
         
 //        coloredDebug()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        disposeBag = DisposeBag()
-        if gridScrollView != nil {
-            gridScrollView.removeFromSuperview()
-            stackView.removeArrangedSubview(gridScrollView)
-            gridScrollView = nil
-        }
     }
     
     private func coloredDebug() {

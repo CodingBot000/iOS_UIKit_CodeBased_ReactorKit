@@ -10,10 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BannerCell: UICollectionViewCell {
-    static let identifier = "BannerCell"
+class FullBannerCell: UICollectionViewCell {
+    static let identifier = "FullBannerCell"
     
-    let bannerSliderView = ImageSliderView()
+    let bannerSliderView = ImageSliderView(frame: .zero, imageSliderType: .fullBanner, isShowPageControl: true)
     var disposeBag = DisposeBag()
     
     var selectedSliderData: Observable<(ProductData, Int)> {
@@ -33,12 +33,13 @@ class BannerCell: UICollectionViewCell {
         ])
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
 }
