@@ -1,0 +1,50 @@
+[
+    {
+        "id": "0",
+        "name": "narrow0",
+        "imageName": "narrow1"
+        "ids_related": ["5", "7", "10", "11"]
+    },
+    {
+        "id": "1",
+        "name": "narrow1",
+        "imageName": "narrow1"
+        "ids_related": ["4", "5", "13", "14", "15", "19"]
+    },
+    {
+        "id": "2",
+        "name": "narrow2",
+        "imageName": "narrow2"
+        "ids_related": ["4", "6", "8", "13", "15"]
+    },
+    {
+        "id": "3",
+        "name": "narrow3",
+        "imageName": "narrow3"
+        "ids_related": ["12", "13", "18", "22", "8", "13", "15"]
+    },
+    {
+        "id": "4",
+        "name": "narrow4",
+        "imageName": "narrow4"
+        "ids_related": ["1", "5", "13", "4", "6", "8", "19"]
+    },
+    {
+        "id": "5",
+        "name": "narrow5",
+        "imageName": "narrow5"
+        "ids_related": ["15", "2", "20", "13", "24", "20", "21"]
+    },
+    {
+        "id": "6",
+        "name": "narrow6",
+        "imageName": "narrow6"
+        "ids_related": ["15", "17", "3", "12", "13", "19"]
+    },
+    {
+        "id": "7",
+        "name": "narrow7",
+        "imageName": "narrow7"
+        "ids_related": ["24", "20", "21"]
+    }
+]

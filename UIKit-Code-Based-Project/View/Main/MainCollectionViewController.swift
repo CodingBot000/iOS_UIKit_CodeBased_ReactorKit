@@ -16,11 +16,14 @@ class MainCollectionViewController: UIViewController {
     let mainBottomInfoBar = UIView()
     
     let collectionItems: [MainCollectionViewCellType] = [
-        .banner,
+        .fullBanner,
         .chipsSection,
         .gridSection(title: "Today Publishing Product", buttonName: nil, isButtonVisible: false, repositoryDataType: .Today, gridType: .rectangle),
+        .narrowBanner,
         .gridSection(title: "Hot SNS", buttonName: nil, isButtonVisible: false, repositoryDataType: .HotNews, gridType: .rectangle),
+        
         .gridSection(title: "Genre", buttonName: nil, isButtonVisible: false, repositoryDataType: .Genre, gridType: .wideWidth),
+        .centerBanner,
         .gridSection(title: "Recommend", buttonName: nil, isButtonVisible: false, repositoryDataType: .Recommend, gridType: .rectangle)
     ]
     
@@ -30,9 +33,11 @@ class MainCollectionViewController: UIViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        collectionView.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
+        collectionView.register(FullBannerCell.self, forCellWithReuseIdentifier: FullBannerCell.identifier)
         collectionView.register(ChipsSectionCell.self, forCellWithReuseIdentifier: ChipsSectionCell.identifier)
         collectionView.register(GridSectionCell.self, forCellWithReuseIdentifier: GridSectionCell.identifier)
+        collectionView.register(CenterBannerCell.self, forCellWithReuseIdentifier: CenterBannerCell.identifier)
+        collectionView.register(NarrowBannerCell.self, forCellWithReuseIdentifier: NarrowBannerCell.identifier)
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -167,15 +172,30 @@ extension MainCollectionViewController: UICollectionViewDataSource {
         let item = collectionItems[indexPath.item]
 
         switch item {
-        case .banner:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCell.identifier, for: indexPath) as! BannerCell
+        case .fullBanner:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FullBannerCell.identifier, for: indexPath) as! FullBannerCell
             cell.selectedSliderData
                 .subscribe(onNext: { [weak self] (productData, index) in
                     self?.handleImageSelection(productData: productData, index: index)
                 })
                 .disposed(by: cell.disposeBag)
             return cell
-
+        case .centerBanner:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CenterBannerCell.identifier, for: indexPath) as! CenterBannerCell
+            cell.selectedSliderData
+                .subscribe(onNext: { [weak self] (productData, index) in
+                    self?.handleImageSelection(productData: productData, index: index)
+                })
+                .disposed(by: cell.disposeBag)
+            return cell
+        case .narrowBanner:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NarrowBannerCell.identifier, for: indexPath) as! NarrowBannerCell
+            cell.selectedSliderData
+                .subscribe(onNext: { [weak self] (productData, index) in
+                    self?.handleImageSelection(productData: productData, index: index)
+                })
+                .disposed(by: cell.disposeBag)
+            return cell
         case .chipsSection:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChipsSectionCell.identifier, for: indexPath) as! ChipsSectionCell
             cell.chipTapped
@@ -219,8 +239,12 @@ extension MainCollectionViewController: UICollectionViewDelegateFlowLayout {
         let width = collectionView.bounds.width
 
         switch item {
-        case .banner:
+        case .fullBanner:
             return CGSize(width: width, height: Dimens.bannerSliderHeight)
+        case .centerBanner:
+            return CGSize(width: width, height: Dimens.centerBannerSliderHeight)
+        case .narrowBanner:
+            return CGSize(width: width, height: Dimens.narrowBannerSliderHeight)
         case .chipsSection:
             let subTitleHeight: CGFloat = Dimens.subTitleViewHeight
             let chipsHeight: CGFloat = 70

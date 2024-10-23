@@ -10,6 +10,7 @@
 import UIKit
 import ReactorKit
 import RxSwift
+import SnapKit
 import RxCocoa
 
 class ImageSliderView: UIView, View {
@@ -28,12 +29,13 @@ class ImageSliderView: UIView, View {
     private var isAutoScrolling: Bool = false
   
     private var isAdjustingOffset = false
+    private var imageSliderType: ImageSliderType
     
     private let pageControl: UIPageControl = {
         let pc = UIPageControl()
         pc.currentPageIndicatorTintColor = .black
         pc.pageIndicatorTintColor = .lightGray
-        pc.translatesAutoresizingMaskIntoConstraints = false
+//        pc.translatesAutoresizingMaskIntoConstraints = false
         return pc
     }()
     
@@ -43,12 +45,14 @@ class ImageSliderView: UIView, View {
         return selectedSliderDataSubject.asObservable()
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, imageSliderType: ImageSliderType, isShowPageControl: Bool) {
+        self.imageSliderType = imageSliderType
         super.init(frame: frame)
-        translatesAutoresizingMaskIntoConstraints = false
+//        translatesAutoresizingMaskIntoConstraints = false
+        
         setupCollectionView()
         setupPageControl()
-        setupConstraints()
+        setupConstraints(imageSliderType: imageSliderType, isShowPageControl: isShowPageControl)
         setupReactor()
         startTimer()
     }
@@ -65,7 +69,7 @@ class ImageSliderView: UIView, View {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
-        layout.itemSize = self.bounds.size
+//        layout.itemSize = self.bounds.size
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
@@ -79,7 +83,7 @@ class ImageSliderView: UIView, View {
         
 
         self.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupPageControl() {
@@ -156,19 +160,50 @@ class ImageSliderView: UIView, View {
         collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .left, animated: false)
     }
     
-    private func setupConstraints() {
-  
-        NSLayoutConstraint.activate([
-       
-            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -10),
-            
-            pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 20)
-        ])
+    private func setupConstraints(imageSliderType: ImageSliderType,
+                                  isShowPageControl: Bool) {
+        collectionView.snp.makeConstraints { make in
+            if (imageSliderType == ImageSliderType.fullBanner) {
+                make.top.equalToSuperview()
+                make.leading.trailing.equalToSuperview()
+                make.bottom.equalTo(pageControl.snp.top).offset(-10)
+            } else if (imageSliderType == ImageSliderType.narrowBanner) {
+                make.top.equalToSuperview().offset(10)
+                make.leading.trailing.equalToSuperview()
+                make.bottom.equalTo(pageControl.snp.top).offset(-10)
+            } else {
+                make.center.equalToSuperview()
+                make.left.equalToSuperview().offset(50)
+                make.right.equalToSuperview().offset(-50)
+                make.top.equalToSuperview().offset(10)
+                make.bottom.equalTo(pageControl.snp.top).offset(-10)
+            }
+        }
+
+        
+        pageControl.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-10)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(20)
+            if (!isShowPageControl) {
+                make.height.equalTo(0)
+                pageControl.isHidden = true
+            }
+        }
+
+        
+        // NS
+//        NSLayoutConstraint.activate([
+//       
+//            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
+//            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+//            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -10),
+//
+//            pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+//            pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            pageControl.heightAnchor.constraint(equalToConstant: 20)
+//        ])
     }
 }
 
@@ -182,7 +217,7 @@ extension ImageSliderView: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageSliderCell.identifier, for: indexPath) as? ImageSliderCell else {
             return UICollectionViewCell()
         }
-        cell.configure(with: internalSliderDatas[indexPath.item])
+        cell.configure(with: internalSliderDatas[indexPath.item], imageSliderType: self.imageSliderType)
         return cell
     }
 }

@@ -35,6 +35,7 @@ class HorizontalGridScrollView: UIView, View {
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
+    
     private var gridType: GridType
     
     private let itemTappedSubject = PublishSubject<ProductData>()

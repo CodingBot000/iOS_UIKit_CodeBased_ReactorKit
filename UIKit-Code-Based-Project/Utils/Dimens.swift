@@ -13,6 +13,8 @@ class Dimens {
     static let bottomInfoBarHeight = 60.0
     static let bannerSliderHeight = 370.0
     
+    static let centerBannerSliderHeight = 280.0
+    static let narrowBannerSliderHeight = 120.0
     
     static let productImageSize = 50.0
     static let playButtonSize = 45.0

@@ -28,6 +28,11 @@ final class DataStores {
         return bannerDatas
     }
 
+    static func getNarrowBannerDatas() -> [NarrowBannerData] {
+        let narrowBannerDatas: [NarrowBannerData] = loadJson("narrowBannerDataJson.json")
+        return narrowBannerDatas
+    }
+
     
     static func getProductDataByID(id: String) -> [ProductData] {
         let productData = buidProductDatas().filter { id.contains($0.id) }

@@ -40,12 +40,26 @@ class ImageSliderCell: UICollectionViewCell {
     }()
     
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+       super.init(frame: frame)
+       setupCell()
+   }
+
+   required init?(coder: NSCoder) {
+       super.init(coder: coder)
+       setupCell()
+   }
+
+    private func setupCell() {
         contentView.addSubview(imageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(descriptionLabel)
         
+        setupConstraints()
+        
+        imageView.clipsToBounds = true
+    }
+    
+    private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -69,14 +83,28 @@ class ImageSliderCell: UICollectionViewCell {
         descriptionLabel.setContentHuggingPriority(.required, for: .horizontal)
         descriptionLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
-    func configure(with data: ProductData) {
+    func configure(
+        with data: ProductData,
+        imageSliderType: ImageSliderType
+    ) {
+        if (imageSliderType == ImageSliderType.centerBanner) {
+            imageView.layer.cornerRadius = 7.0
+        }
         imageView.image = UIImage(named: data.imageName)
         nameLabel.text = data.name
         descriptionLabel.text = data.description
+        
+        
+        switch imageSliderType {
+            case .narrowBanner:
+                nameLabel.isHidden = true
+                descriptionLabel.isHidden = true
+            case .centerBanner:
+                descriptionLabel.isHidden = true
+            case .fullBanner:
+                nameLabel.isHidden = false
+                descriptionLabel.isHidden = false
+        }
     }
 }
