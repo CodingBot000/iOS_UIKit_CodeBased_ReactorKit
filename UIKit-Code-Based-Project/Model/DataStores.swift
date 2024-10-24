@@ -47,16 +47,15 @@ final class DataStores {
 
     static func getCenterBannerDatas() -> [ImageSliderData] {
 
-        let bannerIDData: BannerData = loadJson("bannerDataJson.json")
-        let bannerIDs = bannerIDData.ids
-        let bannerDataOfProducts = buidProductDatas().filter { bannerIDs.contains($0.id) }
+        let bannerDatas: [CenterBannerData] = loadJson("centerBannerDataJson.json")
+        
         var imageSliderDatas: [ImageSliderData] = []
-        for (index, data) in bannerDataOfProducts.enumerated() {
-            let data = bannerDataOfProducts[index]
+        for (index, data) in bannerDatas.enumerated() {
+            let data = bannerDatas[index]
             imageSliderDatas.append(
                 ImageSliderData(id: data.id,
                                 name: data.name,
-                                description: data.description,
+                                description: "",
                                 imageName: data.imageName))
         }
         
@@ -64,11 +63,11 @@ final class DataStores {
     }
     
     static func getNarrowBannerDatas() -> [ImageSliderData] {
-        let narrowBannerDatas: [NarrowBannerData] = loadJson("narrowBannerDataJson.json")
+        let bannerDatas: [NarrowBannerData] = loadJson("narrowBannerDataJson.json")
         
         var imageSliderDatas: [ImageSliderData] = []
-        for (index, data) in narrowBannerDatas.enumerated() {
-            let data = narrowBannerDatas[index]
+        for (index, data) in bannerDatas.enumerated() {
+            let data = bannerDatas[index]
             imageSliderDatas.append(
                 ImageSliderData(id: data.id,
                                 name: data.name,
