@@ -16,20 +16,20 @@ class ImageSliderReactor: Reactor {
     }
     
     enum Mutation {
-        case setSliderDatas([ProductData])
+        case setSliderDatas([ImageSliderData])
         case setCurrentIndex(Int)
     }
     
     struct State {
-        var productDatas: [ProductData] = []
+        var datas: [ImageSliderData] = []
         var currentIndex: Int = 0
     }
     
     let initialState: State
-    private let bannersRepository: BannersRepository
+    private let imageSliderRepository: ImageSldiderRepositoryProtocol
     
-    init(bannersRepository: BannersRepository) {
-        self.bannersRepository = bannersRepository
+    init(imageSliderRepository: ImageSldiderRepositoryProtocol) {
+        self.imageSliderRepository = imageSliderRepository
         self.initialState = State()
     }
     
@@ -37,7 +37,7 @@ class ImageSliderReactor: Reactor {
         switch action {
         case .nextImage:
             var newIndex = currentState.currentIndex + 1
-            if newIndex >= currentState.productDatas.count {
+            if newIndex >= currentState.datas.count {
                 newIndex = 0
             }
             return Observable.just(Mutation.setCurrentIndex(newIndex))
@@ -45,12 +45,12 @@ class ImageSliderReactor: Reactor {
         case .previousImage:
             var newIndex = currentState.currentIndex - 1
             if newIndex < 0 {
-                newIndex = self.currentState.productDatas.count - 1
+                newIndex = self.currentState.datas.count - 1
             }
             return Observable.just(Mutation.setCurrentIndex(newIndex))
             
         case .fetchImages:
-            return bannersRepository.fetchBanners()
+            return imageSliderRepository.fetchDatas()
                 .map { Mutation.setSliderDatas($0) }
         }
     }
@@ -59,7 +59,7 @@ class ImageSliderReactor: Reactor {
         var newState = state
         switch mutation {
             case .setSliderDatas(let producDatas):
-                newState.productDatas = producDatas
+                newState.datas = producDatas
             case .setCurrentIndex(let index):
                 newState.currentIndex = index
         }

@@ -113,7 +113,7 @@ class MainCollectionViewController: UIViewController {
         
         productInfoView.onPlayButtonTapped = { [weak self] (data) in
             if (!data.id.isEmpty) {
-                self?.gotoDetailViewController(productData: data)
+                self?.gotoDetailViewController(id: data.id)
             }
         }
 
@@ -128,9 +128,9 @@ class MainCollectionViewController: UIViewController {
         ])
     }
     
-    private func handleImageSelection(productData: ProductData, index: Int) {
-        gotoDetailViewController(productData: productData)
-        print("Selected Image Index: \(productData), Image: \(productData.imageName)")
+    private func handleImageSelection(imageSliderData: ImageSliderData, index: Int) {
+        print("Selected Image Index: \(imageSliderData), Image: \(imageSliderData.imageName)")
+        gotoDetailViewController(id: imageSliderData.id)
     }
     
     private func handleChipSelection(index: Int, data: ChipData) {
@@ -138,7 +138,7 @@ class MainCollectionViewController: UIViewController {
     }
     
     private func handleProductItemTapped(productData: ProductData) {
-        gotoDetailViewController(productData: productData)
+        gotoDetailViewController(id: productData.id)
         print("Tapped Product: \(productData.name)")
     }
     
@@ -175,24 +175,24 @@ extension MainCollectionViewController: UICollectionViewDataSource {
         case .fullBanner:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FullBannerCell.identifier, for: indexPath) as! FullBannerCell
             cell.selectedSliderData
-                .subscribe(onNext: { [weak self] (productData, index) in
-                    self?.handleImageSelection(productData: productData, index: index)
+                .subscribe(onNext: { [weak self] (imageSliderData, index) in
+                    self?.handleImageSelection(imageSliderData: imageSliderData, index: index)
                 })
                 .disposed(by: cell.disposeBag)
             return cell
         case .centerBanner:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CenterBannerCell.identifier, for: indexPath) as! CenterBannerCell
             cell.selectedSliderData
-                .subscribe(onNext: { [weak self] (productData, index) in
-                    self?.handleImageSelection(productData: productData, index: index)
+                .subscribe(onNext: { [weak self] (imageSliderData, index) in
+                    self?.handleImageSelection(imageSliderData: imageSliderData, index: index)
                 })
                 .disposed(by: cell.disposeBag)
             return cell
         case .narrowBanner:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NarrowBannerCell.identifier, for: indexPath) as! NarrowBannerCell
             cell.selectedSliderData
-                .subscribe(onNext: { [weak self] (productData, index) in
-                    self?.handleImageSelection(productData: productData, index: index)
+                .subscribe(onNext: { [weak self] (imageSliderData, index) in
+                    self?.handleImageSelection(imageSliderData: imageSliderData, index: index)
                 })
                 .disposed(by: cell.disposeBag)
             return cell

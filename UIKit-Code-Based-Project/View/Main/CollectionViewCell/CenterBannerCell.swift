@@ -16,7 +16,7 @@ class CenterBannerCell: UICollectionViewCell {
     let bannerSliderView = ImageSliderView(frame: .zero, imageSliderType: .centerBanner, isShowPageControl: false)
     var disposeBag = DisposeBag()
     
-    var selectedSliderData: Observable<(ProductData, Int)> {
+    var selectedSliderData: Observable<(ImageSliderData, Int)> {
         return bannerSliderView.selectedSliderData.asObservable()
     }
     

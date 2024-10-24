@@ -12,23 +12,28 @@ class DetailViewReactor: Reactor {
     
     enum Action {
         case toggleLike
-        case loadData
+        case fetchData(String)
     }
     
     enum Mutation {
         case setLiked(Bool)
-        case setProductData(ProductData)
+        case setProductData(ProductData?)
+        
     }
     
     struct State {
         var isLiked: Bool
-        var productData: ProductData
+        var productData: ProductData?
     }
     
     let initialState: State
+    let repository: ProductMapperRepository
     
-    init(productData: ProductData) {
-        self.initialState = State(isLiked: false, productData: productData)
+    init(id: String) {
+        repository = ProductMapperRepositoryImpl()
+        
+        self.initialState = State(isLiked: false, productData: nil)
+        self.action.onNext(.fetchData(id))
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -36,9 +41,12 @@ class DetailViewReactor: Reactor {
         case .toggleLike:
             let newLikedState = !currentState.isLiked
             return Observable.just(Mutation.setLiked(newLikedState))
-        case .loadData:
-            MemoryStores.addProdcutHistory(prodcutData: currentState.productData)
-            return Observable.just(Mutation.setProductData(currentState.productData))
+        case .fetchData(let id):
+            return repository.fetchDatas(id: id)
+                .flatMap { productData -> Observable<Mutation> in
+                    MemoryStores.addProdcutHistory(prodcutData: productData)
+                    return Observable.just(Mutation.setProductData(productData))
+                }
         }
     }
     

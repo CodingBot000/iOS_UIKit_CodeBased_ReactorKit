@@ -131,10 +131,10 @@ class DetailViewController: UIViewController, View {
     }()
     
  
-    init(productData: ProductData) {
+    init(id: String) {
   
         super.init(nibName: nil, bundle: nil)
-        self.reactor = DetailViewReactor(productData: productData)
+        self.reactor = DetailViewReactor(id: id)
     }
     
     required init?(coder: NSCoder) {
@@ -191,11 +191,7 @@ class DetailViewController: UIViewController, View {
                 .map { Reactor.Action.toggleLike }
                 .bind(to: reactor.action)
                 .disposed(by: disposeBag)
-       
-            Observable.just(Reactor.Action.loadData)
-                .bind(to: reactor.action)
-                .disposed(by: disposeBag)
-            
+
             reactor.state.map { $0.isLiked }
                 .distinctUntilChanged()
                 .bind { [weak self] isLiked in
@@ -250,11 +246,18 @@ class DetailViewController: UIViewController, View {
     }
     
   
-    private func configure(with productData: ProductData) {
-        productImageView.image = UIImage(named: productData.imageName)
-        nameLabel.text = productData.name
-        manufacturerLabel.text = productData.manufacturer
-        descLabel.text = productData.description
+    private func configure(with productData: ProductData?) {
+        if let productData = productData {
+            productImageView.image = UIImage(named: productData.imageName)
+            nameLabel.text = productData.name
+            manufacturerLabel.text = productData.manufacturer
+            descLabel.text = productData.description
+        } else {
+            productImageView.image = nil
+            nameLabel.text = "Product Load Error"
+            manufacturerLabel.text = ""
+            descLabel.text = ""
+        }
     }
     
     

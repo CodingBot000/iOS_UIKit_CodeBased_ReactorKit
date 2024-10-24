@@ -60,7 +60,7 @@ class HorizontalGridScrollView: UIView, View {
     
 
     private func setUpReactor(repositoryDataType: RepositoryDataType) {
-         let repository: ProductCommonRepository
+         let repository: ProductRepositoryProtocol
          
          switch repositoryDataType {
              case .Today:

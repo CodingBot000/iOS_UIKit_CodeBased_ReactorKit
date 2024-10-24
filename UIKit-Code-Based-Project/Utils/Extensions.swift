@@ -43,8 +43,10 @@ extension Array where Element == ChipData {
 }
 
 extension UIViewController {
-    func gotoDetailViewController(productData: ProductData) {
-        let detailVC = DetailViewController(productData: productData)
+    func gotoDetailViewController(id: String) {
+        let detailVC = DetailViewController(id: id)
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
+
+

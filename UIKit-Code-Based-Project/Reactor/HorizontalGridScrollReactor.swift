@@ -22,10 +22,10 @@ class HorizontalGridScrollReactor: Reactor {
     }
     
     let initialState: State
-    private let productRepository: ProductCommonRepository
+    private let productRepository: ProductRepositoryProtocol
     
     
-    init(productRepository: ProductCommonRepository) {
+    init(productRepository: ProductRepositoryProtocol) {
         self.productRepository = productRepository
         self.initialState = State()
     }

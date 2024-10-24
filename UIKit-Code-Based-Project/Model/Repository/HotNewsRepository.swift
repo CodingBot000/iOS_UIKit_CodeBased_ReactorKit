@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol HotNewsRepository: ProductCommonRepository {
+protocol HotNewsRepository: ProductRepositoryProtocol {
     func fetchDatas() -> Observable<[ProductData]>
 }
 

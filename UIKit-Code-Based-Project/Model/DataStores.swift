@@ -24,20 +24,69 @@ final class DataStores {
         let bannerIDData: BannerData = loadJson("bannerDataJson.json")
         let bannerIDs = bannerIDData.ids
         let bannerDatas = buidProductDatas().filter { bannerIDs.contains($0.id) }
-      
+        
         return bannerDatas
     }
+    static func getTopBannerDatas() -> [ImageSliderData] {
 
-    static func getNarrowBannerDatas() -> [NarrowBannerData] {
+        let bannerIDData: BannerData = loadJson("bannerDataJson.json")
+        let bannerIDs = bannerIDData.ids
+        let bannerDataOfProducts = buidProductDatas().filter { bannerIDs.contains($0.id) }
+        var imageSliderDatas: [ImageSliderData] = []
+        for (index, data) in bannerDataOfProducts.enumerated() {
+            let data = bannerDataOfProducts[index]
+            imageSliderDatas.append(
+                ImageSliderData(id: data.id,
+                                name: data.name,
+                                description: data.description,
+                                imageName: data.imageName))
+        }
+        
+        return imageSliderDatas
+    }
+
+    static func getCenterBannerDatas() -> [ImageSliderData] {
+
+        let bannerIDData: BannerData = loadJson("bannerDataJson.json")
+        let bannerIDs = bannerIDData.ids
+        let bannerDataOfProducts = buidProductDatas().filter { bannerIDs.contains($0.id) }
+        var imageSliderDatas: [ImageSliderData] = []
+        for (index, data) in bannerDataOfProducts.enumerated() {
+            let data = bannerDataOfProducts[index]
+            imageSliderDatas.append(
+                ImageSliderData(id: data.id,
+                                name: data.name,
+                                description: data.description,
+                                imageName: data.imageName))
+        }
+        
+        return imageSliderDatas
+    }
+    
+    static func getNarrowBannerDatas() -> [ImageSliderData] {
         let narrowBannerDatas: [NarrowBannerData] = loadJson("narrowBannerDataJson.json")
-        return narrowBannerDatas
+        
+        var imageSliderDatas: [ImageSliderData] = []
+        for (index, data) in narrowBannerDatas.enumerated() {
+            let data = narrowBannerDatas[index]
+            imageSliderDatas.append(
+                ImageSliderData(id: data.id,
+                                name: data.name,
+                                description: "",
+                                imageName: data.imageName))
+        }
+        
+        return imageSliderDatas
     }
 
     
-    static func getProductDataByID(id: String) -> [ProductData] {
-        let productData = buidProductDatas().filter { id.contains($0.id) }
-     
-        return productData
+    static func getProductDataByID(id: String) -> ProductData? {
+        if let productData = buidProductDatas().first(where: { id == $0.id }) {
+            return productData
+        } else {
+            return nil
+        }
+        
     }
     
     static func getChipDatas() -> [ChipData] {

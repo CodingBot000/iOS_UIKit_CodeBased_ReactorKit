@@ -85,7 +85,7 @@ class ImageSliderCell: UICollectionViewCell {
     }
 
     func configure(
-        with data: ProductData,
+        with data: ImageSliderData,
         imageSliderType: ImageSliderType
     ) {
         if (imageSliderType == ImageSliderType.centerBanner) {

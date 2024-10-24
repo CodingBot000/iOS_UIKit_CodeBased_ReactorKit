@@ -16,7 +16,7 @@ class FullBannerCell: UICollectionViewCell {
     let bannerSliderView = ImageSliderView(frame: .zero, imageSliderType: .fullBanner, isShowPageControl: true)
     var disposeBag = DisposeBag()
     
-    var selectedSliderData: Observable<(ProductData, Int)> {
+    var selectedSliderData: Observable<(ImageSliderData, Int)> {
         return bannerSliderView.selectedSliderData.asObservable()
     }
     

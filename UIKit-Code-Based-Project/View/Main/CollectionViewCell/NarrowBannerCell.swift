@@ -16,7 +16,7 @@ class NarrowBannerCell: UICollectionViewCell {
     let bannerSliderView = ImageSliderView(frame: .zero, imageSliderType: .narrowBanner, isShowPageControl: false)
     var disposeBag = DisposeBag()
     
-    var selectedSliderData: Observable<(ProductData, Int)> {
+    var selectedSliderData: Observable<(ImageSliderData, Int)> {
         return bannerSliderView.selectedSliderData.asObservable()
     }
     

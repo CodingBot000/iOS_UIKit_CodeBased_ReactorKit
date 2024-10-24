@@ -1,5 +1,5 @@
 //
-//  NarrowBannerRepository.swift
+//  CenterBannersRepository.swift
 //  UIKit-Code-Based-Project
 //
 //  Created by switchMac on 10/24/24.
@@ -7,13 +7,15 @@
 
 import RxSwift
 
-protocol NarrowBannerRepository: ImageSldiderRepositoryProtocol {
+protocol CenterBannersRepository: ImageSldiderRepositoryProtocol {
     func fetchDatas() -> Observable<[ImageSliderData]>
 }
 
-class NarrowBannerRepositoryImpl: NarrowBannerRepository {
+
+class CenterBannersRepositoryImpl: CenterBannersRepository {
+
     func fetchDatas() -> Observable<[ImageSliderData]> {
-        let dataList = DataStores.getNarrowBannerDatas()
+        let dataList = DataStores.getCenterBannerDatas()
         
         return Observable.just(dataList)
     

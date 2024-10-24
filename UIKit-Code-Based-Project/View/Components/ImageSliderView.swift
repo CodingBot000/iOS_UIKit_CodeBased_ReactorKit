@@ -18,8 +18,8 @@ class ImageSliderView: UIView, View {
     typealias Reactor = ImageSliderReactor
     var disposeBag = DisposeBag()
     
-    private var baseSliderDatas: [ProductData] = []
-    private var internalSliderDatas: [ProductData] = []
+    private var baseSliderDatas: [ImageSliderData] = []
+    private var imageSliderDatas: [ImageSliderData] = []
     
     private var collectionView: UICollectionView!
     private var timer: Timer?
@@ -39,9 +39,9 @@ class ImageSliderView: UIView, View {
         return pc
     }()
     
-    private let selectedSliderDataSubject = PublishSubject<(ProductData, Int)>()
+    private let selectedSliderDataSubject = PublishSubject<(ImageSliderData, Int)>()
     
-    var selectedSliderData: Observable<(ProductData, Int)> {
+    var selectedSliderData: Observable<(ImageSliderData, Int)> {
         return selectedSliderDataSubject.asObservable()
     }
     
@@ -53,7 +53,7 @@ class ImageSliderView: UIView, View {
         setupCollectionView()
         setupPageControl()
         setupConstraints(imageSliderType: imageSliderType, isShowPageControl: isShowPageControl)
-        setupReactor()
+        setupReactor(imageSliderType: imageSliderType)
         startTimer()
     }
     
@@ -103,7 +103,7 @@ class ImageSliderView: UIView, View {
     }
     
     @objc private func autoScroll() {
-        guard internalSliderDatas.count > 1 else { return }
+        guard imageSliderDatas.count > 1 else { return }
         if isAdjustingOffset { return }
         isAutoScrolling = true
         currentIndex += 1
@@ -111,22 +111,31 @@ class ImageSliderView: UIView, View {
     }
     
     private func scrollToCurrentIndex(animated: Bool) {
-        guard currentIndex >= 0 && currentIndex < internalSliderDatas.count else { return }
+        guard currentIndex >= 0 && currentIndex < imageSliderDatas.count else { return }
         collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .left, animated: animated)
     }
  
-    private func setupReactor() {
-        let repository = BannersRepositoryImpl()
-        self.reactor = ImageSliderReactor(bannersRepository: repository)
+    private func setupReactor(imageSliderType: ImageSliderType) {
+        let repository: ImageSldiderRepositoryProtocol
+        
+        switch imageSliderType {
+            case .centerBanner:
+                repository = CenterBannersRepositoryImpl()
+            case .fullBanner:
+                repository = TopBannersRepositoryImpl()
+            case .narrowBanner:
+                repository = NarrowBannerRepositoryImpl()
+        }
+        self.reactor = ImageSliderReactor(imageSliderRepository:  repository)
         self.reactor?.action.onNext(.fetchImages)
     }
 
     func bind(reactor: Reactor) {
 
-        reactor.state.map { $0.productDatas }
+        reactor.state.map { $0.datas }
             .distinctUntilChanged()
-            .bind { [weak self] productDatas in
-                self?.setProductDatas(productDatas)
+            .bind { [weak self] datas in
+                self?.setProductDatas(datas)
             }
             .disposed(by: disposeBag)
       
@@ -138,11 +147,11 @@ class ImageSliderView: UIView, View {
             .disposed(by: disposeBag)
     }
   
-    func setProductDatas(_ datas: [ProductData]) {
+    func setProductDatas(_ datas: [ImageSliderData]) {
         guard datas.count > 0 else { return }
         
         baseSliderDatas = datas
-        internalSliderDatas = [datas.last!] + datas + [datas.first!]
+        imageSliderDatas = [datas.last!] + datas + [datas.first!]
         currentIndex = 1
         pageControl.numberOfPages = baseSliderDatas.count
         pageControl.currentPage = 0
@@ -209,7 +218,7 @@ class ImageSliderView: UIView, View {
 
 extension ImageSliderView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return internalSliderDatas.count
+        return imageSliderDatas.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -217,7 +226,7 @@ extension ImageSliderView: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageSliderCell.identifier, for: indexPath) as? ImageSliderCell else {
             return UICollectionViewCell()
         }
-        cell.configure(with: internalSliderDatas[indexPath.item], imageSliderType: self.imageSliderType)
+        cell.configure(with: imageSliderDatas[indexPath.item], imageSliderType: self.imageSliderType)
 
         return cell
     }
@@ -276,10 +285,10 @@ extension ImageSliderView: UICollectionViewDelegate {
         if currentIndex == 0 {
   
             isAdjustingOffset = true
-            currentIndex = internalSliderDatas.count - 2
+            currentIndex = imageSliderDatas.count - 2
             collectionView.scrollToItem(at: IndexPath(item: currentIndex, section: 0), at: .left, animated: false)
             isAdjustingOffset = false
-        } else if currentIndex == internalSliderDatas.count - 1 {
+        } else if currentIndex == imageSliderDatas.count - 1 {
 
             isAdjustingOffset = true
             currentIndex = 1

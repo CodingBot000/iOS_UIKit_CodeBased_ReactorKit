@@ -26,7 +26,12 @@ final class MemoryStores {
         return productHistory
     }
 
-    static func addProdcutHistory(prodcutData: ProductData) {
+    static func addProdcutHistory(prodcutData: ProductData?) {
+        guard let prodcutData = prodcutData else {
+            return
+        }
+        
+            
         if let existingIndex = productHistory.firstIndex(of: prodcutData) {
             if existingIndex != productHistory.count - 1 {
                 productHistory.remove(at: existingIndex)

@@ -7,7 +7,7 @@
 
 import RxSwift
 
-protocol TodayProductRepository: ProductCommonRepository {
+protocol TodayProductRepository: ProductRepositoryProtocol {
     func fetchDatas() -> Observable<[ProductData]>
 }
 
